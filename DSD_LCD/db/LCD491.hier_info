@@ -1,0 +1,22 @@
+|lcd
+ck => Q[0]~reg0.CLK
+ck => Q[1]~reg0.CLK
+ck => Q[2]~reg0.CLK
+ck => Q[3]~reg0.CLK
+rst => contador.IN1
+Q[0] <> Q[0]~reg0
+Q[1] <> Q[1]~reg0
+Q[2] <> Q[2]~reg0
+Q[3] <> Q[3]~reg0
+rs <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+rw <= <GND>
+D[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+D[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+D[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+D[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+D[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+D[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

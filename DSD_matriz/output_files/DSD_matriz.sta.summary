@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'divi[15]'
+Slack : -6.672
+TNS   : -102.341
+
+Type  : Setup 'reloj'
+Slack : -3.973
+TNS   : -53.463
+
+Type  : Hold 'reloj'
+Slack : -1.717
+TNS   : -1.717
+
+Type  : Hold 'divi[15]'
+Slack : 2.066
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'reloj'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'divi[15]'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

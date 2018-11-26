@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'divi_mat[10]'
+Slack : -6.135
+TNS   : -92.304
+
+Type  : Setup 'reloj'
+Slack : -5.654
+TNS   : -109.950
+
+Type  : Setup 'sensor_P2'
+Slack : -5.131
+TNS   : -8.764
+
+Type  : Setup 'divi[23]'
+Slack : -3.889
+TNS   : -43.112
+
+Type  : Setup 'edo_pres.BP1'
+Slack : -3.825
+TNS   : -3.825
+
+Type  : Setup 'divi[19]'
+Slack : -1.717
+TNS   : -4.690
+
+Type  : Hold 'divi[23]'
+Slack : -2.947
+TNS   : -5.978
+
+Type  : Hold 'sensor_P2'
+Slack : -2.891
+TNS   : -2.891
+
+Type  : Hold 'reloj'
+Slack : -2.194
+TNS   : -7.661
+
+Type  : Hold 'divi_mat[10]'
+Slack : 1.650
+TNS   : 0.000
+
+Type  : Hold 'divi[19]'
+Slack : 1.704
+TNS   : 0.000
+
+Type  : Hold 'edo_pres.BP1'
+Slack : 2.130
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'reloj'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'sensor_P2'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'divi[19]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divi[23]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'divi_mat[10]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'edo_pres.BP1'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

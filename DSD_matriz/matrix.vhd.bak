@@ -1,0 +1,105 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity matrix is
+ 
+ port(ck, rst : in std_logic;
+		Q : inout std_logic_vector (3 downto 0);
+		rs : out std_logic;
+		rw : out std_logic;
+		REN : out std_logic_vector (7 downto 0));
+ 
+ end matrix;
+ 
+ architecture eduardo of matrix is
+begin
+ contador:process(ck)
+			begin
+					if(ck'event and ck = '1') then
+					Q<=Q + 1;
+						if(rst = '1' or Q="1000000") then --Q = "0110" or 
+							Q <= "0000000";
+							end if;
+					end if;
+			end process contador;
+ 
+			
+			letra_j:process(Q) begin
+			case Q is
+				
+				when	"0000000"	=> COL <=	"10111001"	;
+				when	"0000001"	=> COL <=	"00111100"	;
+				when	"0000010"	=> COL <=	"00111100"	;
+				when	"0000011"	=> COL <=	"11111111"	;
+				when	"0000100"	=> COL <=	"11111110"	;
+				when	"0000101"	=> COL <=	"00111111"	;
+				when	"0000110"	=> COL <=	"00111111"	;
+				when	"0000111"	=> COL <=	"10111111"	;
+				when	"0001000"	=> COL <=	"10000001"	;
+				when	"0001001"	=> COL <=	"00000000"	;
+				when	"0001010"	=> COL <=	"00011000"	;
+				when	"0001011"	=> COL <=	"00111100"	;
+				when	"0001100"	=> COL <=	"00111100"	;
+				when	"0001101"	=> COL <=	"00011000"	;
+				when	"0001110"	=> COL <=	"00000000"	;
+				when	"0001111"	=> COL <=	"10000001"	;
+				when	"0010000"	=> COL <=	"10011001"	;
+				when	"0010001"	=> COL <=	"00001000"	;
+				when	"0010010"	=> COL <=	"00001100"	;
+				when	"0010011"	=> COL <=	"00100100"	;
+				when	"0010100"	=> COL <=	"00100100"	;
+				when	"0010101"	=> COL <=	"00110100"	;
+				when	"0010110"	=> COL <=	"00010000"	;
+				when	"0010111"	=> COL <=	"10011001"	;
+				when	"0011000"	=> COL <=	"10000001"	;
+				when	"0011001"	=> COL <=	"00000000"	;
+				when	"0011010"	=> COL <=	"00100100"	;
+				when	"0011011"	=> COL <=	"00100100"	;
+				when	"0011100"	=> COL <=	"00100100"	;
+				when	"0011101"	=> COL <=	"00111100"	;
+				when	"0011110"	=> COL <=	"00111100"	;
+				when	"0011111"	=> COL <=	"10111101"	;
+				when	"0100000"	=> COL <=	"11111111"	;
+				when	"0100001"	=> COL <=	"11111110"	;
+				when	"0100010"	=> COL <=	"11101110"	;
+				when	"0100011"	=> COL <=	"01111111"	;
+				when	"0100100"	=> COL <=	"01111111"	;
+				when	"0100101"	=> COL <=	"11111110"	;
+				when	"0100110"	=> COL <=	"11111110"	;
+				when	"0100111"	=> COL <=	"11111111"	;
+				when	"0101000"	=> COL <=	"11111111"	;
+				when	"0101001"	=> COL <=	"11011100"	;
+				when	"0101010"	=> COL <=	"10010111"	;
+				when	"0101011"	=> COL <=	"10111010"	;
+				when	"0101100"	=> COL <=	"10110110"	;
+				when	"0101101"	=> COL <=	"10000110"	;
+				when	"0101110"	=> COL <=	"11001110"	;
+				when	"0101111"	=> COL <=	"11111111"	;
+				when	"0110000"	=> COL <=	"11111111"	;
+				when	"0110001"	=> COL <=	"11010010"	;
+				when	"0110010"	=> COL <=	"10111100"	;
+				when	"0110011"	=> COL <=	"10110110"	;
+				when	"0110100"	=> COL <=	"10110110"	;
+				when	"0110101"	=> COL <=	"10000000"	;
+				when	"0110110"	=> COL <=	"11001001"	;
+				when	"0110111"	=> COL <=	"11111111"	;
+				when	"0111000"	=> COL <=	"11111011"	;
+				when	"0111001"	=> COL <=	"11110011"	;
+				when	"0111010"	=> COL <=	"11101011"	;
+				when	"0111011"	=> COL <=	"11011011"	;
+				when	"0111100"	=> COL <=	"01111111"	;
+				when	"0111101"	=> COL <=	"01111111"	;
+				when	"0111110"	=> COL <=	"11111011"	;
+				when	"0111111"	=> COL <=	"11111011"	;
+					when	"1000000"	=> COL <=	"000000000"	;
+
+				
+				
+
+				when others 		=> REN <= 	"00000000";
+				end case;
+			end process letra_j;
+			
+end eduardo;

@@ -1,0 +1,1477 @@
+TimeQuest Timing Analyzer report for DSD_elevador5
+Thu Nov 22 09:38:40 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'divi_mat[10]'
+ 12. Setup: 'reloj'
+ 13. Setup: 'sensor_P2'
+ 14. Setup: 'divi[23]'
+ 15. Setup: 'edo_pres.BP1'
+ 16. Setup: 'divi[19]'
+ 17. Hold: 'divi[23]'
+ 18. Hold: 'sensor_P2'
+ 19. Hold: 'reloj'
+ 20. Hold: 'divi_mat[10]'
+ 21. Hold: 'divi[19]'
+ 22. Hold: 'edo_pres.BP1'
+ 23. Minimum Pulse Width: 'reloj'
+ 24. Minimum Pulse Width: 'sensor_P2'
+ 25. Minimum Pulse Width: 'divi[19]'
+ 26. Minimum Pulse Width: 'divi[23]'
+ 27. Minimum Pulse Width: 'divi_mat[10]'
+ 28. Minimum Pulse Width: 'edo_pres.BP1'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Setup Transfers
+ 34. Hold Transfers
+ 35. Report TCCS
+ 36. Report RSKM
+ 37. Unconstrained Paths
+ 38. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; DSD_elevador5                                                     ;
+; Device Family      ; MAX II                                                            ;
+; Device Name        ; EPM240T100C5                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                     ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+; Clock Name   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets          ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+; divi[19]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divi[19] }     ;
+; divi[23]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divi[23] }     ;
+; divi_mat[10] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divi_mat[10] } ;
+; edo_pres.BP1 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { edo_pres.BP1 } ;
+; reloj        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { reloj }        ;
+; sensor_P2    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sensor_P2 }    ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+
+
++----------------------------------------------------+
+; Fmax Summary                                       ;
++------------+-----------------+--------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name   ; Note ;
++------------+-----------------+--------------+------+
+; 140.15 MHz ; 140.15 MHz      ; divi_mat[10] ;      ;
+; 150.29 MHz ; 150.29 MHz      ; reloj        ;      ;
+; 204.54 MHz ; 204.54 MHz      ; divi[23]     ;      ;
+; 368.05 MHz ; 368.05 MHz      ; divi[19]     ;      ;
++------------+-----------------+--------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------+
+; Setup Summary                         ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; divi_mat[10] ; -6.135 ; -92.304       ;
+; reloj        ; -5.654 ; -109.950      ;
+; sensor_P2    ; -5.131 ; -8.764        ;
+; divi[23]     ; -3.889 ; -43.112       ;
+; edo_pres.BP1 ; -3.825 ; -3.825        ;
+; divi[19]     ; -1.717 ; -4.690        ;
++--------------+--------+---------------+
+
+
++---------------------------------------+
+; Hold Summary                          ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; divi[23]     ; -2.947 ; -5.978        ;
+; sensor_P2    ; -2.891 ; -2.891        ;
+; reloj        ; -2.194 ; -7.661        ;
+; divi_mat[10] ; 1.650  ; 0.000         ;
+; divi[19]     ; 1.704  ; 0.000         ;
+; edo_pres.BP1 ; 2.130  ; 0.000         ;
++--------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------+
+; Minimum Pulse Width Summary           ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; reloj        ; -2.289 ; -2.289        ;
+; sensor_P2    ; -2.289 ; -2.289        ;
+; divi[19]     ; 0.234  ; 0.000         ;
+; divi[23]     ; 0.234  ; 0.000         ;
+; divi_mat[10] ; 0.234  ; 0.000         ;
+; edo_pres.BP1 ; 0.500  ; 0.000         ;
++--------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup: 'divi_mat[10]'                                                                                    ;
++--------+------------+-------------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node     ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+-------------+--------------+--------------+--------------+------------+------------+
+; -6.135 ; Q3[4]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.802      ;
+; -6.135 ; Q3[4]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.802      ;
+; -6.135 ; Q3[4]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.802      ;
+; -6.135 ; Q3[4]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.802      ;
+; -6.135 ; Q3[4]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.802      ;
+; -6.094 ; Q3[3]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.761      ;
+; -6.094 ; Q3[3]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.761      ;
+; -6.094 ; Q3[3]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.761      ;
+; -6.094 ; Q3[3]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.761      ;
+; -6.094 ; Q3[3]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.761      ;
+; -6.031 ; Q2[2]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.698      ;
+; -6.031 ; Q2[2]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.698      ;
+; -6.031 ; Q2[2]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.698      ;
+; -6.031 ; Q2[2]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.698      ;
+; -6.031 ; Q2[2]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.698      ;
+; -5.918 ; Q3[2]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.585      ;
+; -5.918 ; Q3[2]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.585      ;
+; -5.918 ; Q3[2]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.585      ;
+; -5.918 ; Q3[2]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.585      ;
+; -5.918 ; Q3[2]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.585      ;
+; -5.869 ; Q2[0]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.536      ;
+; -5.869 ; Q2[0]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.536      ;
+; -5.869 ; Q2[0]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.536      ;
+; -5.869 ; Q2[0]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.536      ;
+; -5.869 ; Q2[0]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.536      ;
+; -5.833 ; Q3[4]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.500      ;
+; -5.822 ; Q3[1]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.489      ;
+; -5.822 ; Q3[1]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.489      ;
+; -5.822 ; Q3[1]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.489      ;
+; -5.822 ; Q3[1]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.489      ;
+; -5.822 ; Q3[1]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.489      ;
+; -5.792 ; Q3[3]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.459      ;
+; -5.760 ; Q3[0]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.427      ;
+; -5.760 ; Q3[0]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.427      ;
+; -5.760 ; Q3[0]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.427      ;
+; -5.760 ; Q3[0]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.427      ;
+; -5.760 ; Q3[0]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.427      ;
+; -5.754 ; Q3[4]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.421      ;
+; -5.754 ; Q3[4]~reg0 ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.421      ;
+; -5.754 ; Q3[4]~reg0 ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.421      ;
+; -5.754 ; Q3[4]~reg0 ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.421      ;
+; -5.754 ; Q3[4]~reg0 ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.421      ;
+; -5.754 ; Q3[4]~reg0 ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.421      ;
+; -5.729 ; Q2[2]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.396      ;
+; -5.713 ; Q3[3]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.380      ;
+; -5.713 ; Q3[3]~reg0 ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.380      ;
+; -5.713 ; Q3[3]~reg0 ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.380      ;
+; -5.713 ; Q3[3]~reg0 ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.380      ;
+; -5.713 ; Q3[3]~reg0 ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.380      ;
+; -5.713 ; Q3[3]~reg0 ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.380      ;
+; -5.662 ; Q3[6]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.329      ;
+; -5.662 ; Q3[6]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.329      ;
+; -5.662 ; Q3[6]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.329      ;
+; -5.662 ; Q3[6]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.329      ;
+; -5.662 ; Q3[6]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.329      ;
+; -5.650 ; Q2[2]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.317      ;
+; -5.650 ; Q2[2]~reg0 ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.317      ;
+; -5.650 ; Q2[2]~reg0 ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.317      ;
+; -5.650 ; Q2[2]~reg0 ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.317      ;
+; -5.650 ; Q2[2]~reg0 ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.317      ;
+; -5.650 ; Q2[2]~reg0 ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.317      ;
+; -5.616 ; Q3[2]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.283      ;
+; -5.587 ; Q2[1]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.254      ;
+; -5.587 ; Q2[1]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.254      ;
+; -5.587 ; Q2[1]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.254      ;
+; -5.587 ; Q2[1]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.254      ;
+; -5.587 ; Q2[1]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.254      ;
+; -5.567 ; Q2[0]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.234      ;
+; -5.537 ; Q3[2]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.204      ;
+; -5.537 ; Q3[2]~reg0 ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.204      ;
+; -5.537 ; Q3[2]~reg0 ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.204      ;
+; -5.537 ; Q3[2]~reg0 ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.204      ;
+; -5.537 ; Q3[2]~reg0 ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.204      ;
+; -5.537 ; Q3[2]~reg0 ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.204      ;
+; -5.520 ; Q3[1]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.187      ;
+; -5.489 ; Q3[9]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.156      ;
+; -5.489 ; Q3[9]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.156      ;
+; -5.489 ; Q3[9]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.156      ;
+; -5.489 ; Q3[9]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.156      ;
+; -5.489 ; Q3[9]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.156      ;
+; -5.488 ; Q2[0]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.155      ;
+; -5.488 ; Q2[0]~reg0 ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.155      ;
+; -5.488 ; Q2[0]~reg0 ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.155      ;
+; -5.488 ; Q2[0]~reg0 ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.155      ;
+; -5.488 ; Q2[0]~reg0 ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.155      ;
+; -5.488 ; Q2[0]~reg0 ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.155      ;
+; -5.458 ; Q3[0]~reg0 ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.125      ;
+; -5.455 ; Q3[5]~reg0 ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.122      ;
+; -5.455 ; Q3[5]~reg0 ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.122      ;
+; -5.455 ; Q3[5]~reg0 ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.122      ;
+; -5.455 ; Q3[5]~reg0 ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.122      ;
+; -5.455 ; Q3[5]~reg0 ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.122      ;
+; -5.441 ; Q3[1]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.108      ;
+; -5.441 ; Q3[1]~reg0 ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.108      ;
+; -5.441 ; Q3[1]~reg0 ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.108      ;
+; -5.441 ; Q3[1]~reg0 ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.108      ;
+; -5.441 ; Q3[1]~reg0 ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.108      ;
+; -5.441 ; Q3[1]~reg0 ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.108      ;
+; -5.431 ; Q3[4]~reg0 ; Q1[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.098      ;
+; -5.424 ; Q3[4]~reg0 ; Q1[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 1.000        ; 0.000      ; 6.091      ;
++--------+------------+-------------+--------------+--------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Setup: 'reloj'                                                                                      ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; -5.654 ; D[0]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.321      ;
+; -5.610 ; D[5]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.277      ;
+; -5.610 ; D[5]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.277      ;
+; -5.610 ; D[5]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.277      ;
+; -5.610 ; D[5]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.277      ;
+; -5.610 ; D[5]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.277      ;
+; -5.597 ; D[5]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.264      ;
+; -5.597 ; D[5]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.264      ;
+; -5.499 ; D[2]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.166      ;
+; -5.403 ; D[1]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.070      ;
+; -5.390 ; D[6]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 6.057      ;
+; -5.328 ; D[2]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.995      ;
+; -5.328 ; D[2]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.995      ;
+; -5.328 ; D[2]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.995      ;
+; -5.328 ; D[2]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.995      ;
+; -5.328 ; D[2]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.995      ;
+; -5.315 ; D[2]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.982      ;
+; -5.315 ; D[2]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.982      ;
+; -5.308 ; D[3]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.975      ;
+; -5.308 ; D[3]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.975      ;
+; -5.308 ; D[3]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.975      ;
+; -5.308 ; D[3]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.975      ;
+; -5.308 ; D[3]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.975      ;
+; -5.295 ; D[3]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.962      ;
+; -5.295 ; D[3]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.962      ;
+; -5.271 ; D[1]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.938      ;
+; -5.271 ; D[1]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.938      ;
+; -5.271 ; D[1]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.938      ;
+; -5.271 ; D[1]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.938      ;
+; -5.271 ; D[1]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.938      ;
+; -5.258 ; D[1]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.925      ;
+; -5.258 ; D[1]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.925      ;
+; -5.183 ; D[12]     ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.850      ;
+; -5.158 ; D[4]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.825      ;
+; -5.158 ; D[4]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.825      ;
+; -5.158 ; D[4]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.825      ;
+; -5.158 ; D[4]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.825      ;
+; -5.158 ; D[4]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.825      ;
+; -5.145 ; D[4]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.812      ;
+; -5.145 ; D[4]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.812      ;
+; -5.130 ; D[8]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.797      ;
+; -5.130 ; D[8]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.797      ;
+; -5.130 ; D[8]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.797      ;
+; -5.130 ; D[8]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.797      ;
+; -5.130 ; D[8]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.797      ;
+; -5.117 ; D[8]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.784      ;
+; -5.117 ; D[8]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.784      ;
+; -5.094 ; D[9]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.761      ;
+; -5.069 ; D[11]     ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.736      ;
+; -5.041 ; D[6]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.708      ;
+; -5.041 ; D[6]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.708      ;
+; -5.041 ; D[6]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.708      ;
+; -5.041 ; D[6]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.708      ;
+; -5.041 ; D[6]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.708      ;
+; -5.028 ; D[6]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.695      ;
+; -5.028 ; D[6]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.695      ;
+; -4.933 ; D[7]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.600      ;
+; -4.923 ; D[7]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.590      ;
+; -4.923 ; D[7]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.590      ;
+; -4.923 ; D[7]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.590      ;
+; -4.923 ; D[7]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.590      ;
+; -4.923 ; D[7]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.590      ;
+; -4.910 ; D[7]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.577      ;
+; -4.910 ; D[7]      ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.577      ;
+; -4.894 ; D[10]     ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.561      ;
+; -4.891 ; D[13]     ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.558      ;
+; -4.891 ; D[13]     ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.558      ;
+; -4.891 ; D[13]     ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.558      ;
+; -4.891 ; D[13]     ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.558      ;
+; -4.891 ; D[13]     ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.558      ;
+; -4.891 ; D[4]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.558      ;
+; -4.878 ; D[13]     ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.545      ;
+; -4.878 ; D[13]     ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.545      ;
+; -4.721 ; D[12]     ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.388      ;
+; -4.721 ; D[12]     ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.388      ;
+; -4.721 ; D[12]     ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.388      ;
+; -4.721 ; D[12]     ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.388      ;
+; -4.721 ; D[12]     ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.388      ;
+; -4.708 ; D[12]     ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.375      ;
+; -4.708 ; D[12]     ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.375      ;
+; -4.688 ; D[5]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.355      ;
+; -4.684 ; D[11]     ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.351      ;
+; -4.684 ; D[11]     ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.351      ;
+; -4.684 ; D[11]     ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.351      ;
+; -4.684 ; D[11]     ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.351      ;
+; -4.684 ; D[11]     ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.351      ;
+; -4.683 ; D[8]      ; C[16]    ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.350      ;
+; -4.681 ; D[0]      ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; D[0]      ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; D[0]      ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; D[0]      ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.348      ;
+; -4.681 ; D[0]      ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.348      ;
+; -4.678 ; D[10]     ; divi[19] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.345      ;
+; -4.678 ; D[10]     ; divi[18] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.345      ;
+; -4.678 ; D[10]     ; divi[17] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.345      ;
+; -4.678 ; D[10]     ; divi[21] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.345      ;
+; -4.678 ; D[10]     ; divi[20] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.345      ;
+; -4.671 ; D[11]     ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.338      ;
+; -4.671 ; D[11]     ; divi[22] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.338      ;
+; -4.668 ; D[0]      ; divi[23] ; reloj        ; reloj       ; 1.000        ; 0.000      ; 5.335      ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup: 'sensor_P2'                                                                                        ;
++--------+--------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+-------------+--------------+-------------+--------------+------------+------------+
+; -5.131 ; edo_pres.SP3 ; SUBIR$latch ; divi[23]     ; sensor_P2   ; 0.500        ; 0.255      ; 2.536      ;
+; -4.991 ; edo_pres.SP2 ; SUBIR$latch ; divi[23]     ; sensor_P2   ; 0.500        ; 0.255      ; 2.396      ;
+; -4.947 ; edo_pres.SP1 ; SUBIR$latch ; divi[23]     ; sensor_P2   ; 0.500        ; 0.255      ; 2.352      ;
+; -3.633 ; edo_pres.BPB ; BAJAR$latch ; divi[23]     ; sensor_P2   ; 0.500        ; 0.361      ; 2.371      ;
+; -3.294 ; edo_pres.BP2 ; BAJAR$latch ; divi[23]     ; sensor_P2   ; 0.500        ; 0.361      ; 2.032      ;
+; 1.268  ; edo_pres.BP1 ; BAJAR$latch ; edo_pres.BP1 ; sensor_P2   ; 0.500        ; 5.082      ; 2.567      ;
+; 1.768  ; edo_pres.BP1 ; BAJAR$latch ; edo_pres.BP1 ; sensor_P2   ; 1.000        ; 5.082      ; 2.567      ;
++--------+--------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'divi[23]'                                                                                                            ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -3.889 ; edo_pres.PB           ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 4.556      ;
+; -3.649 ; edo_pres.P1           ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 4.316      ;
+; -3.557 ; edo_pres.P2           ; edo_pres.BP1          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 4.224      ;
+; -3.502 ; edo_pres.P2           ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 4.169      ;
+; -3.500 ; edo_pres.DP1          ; edo_pres.P1           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 4.167      ;
+; -3.426 ; edo_pres.P3           ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 4.093      ;
+; -3.189 ; edo_pres.DETECTA_PISO ; edo_pres.P1           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.856      ;
+; -3.132 ; edo_pres.DETECTA_PISO ; edo_pres.P2           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.799      ;
+; -3.120 ; edo_pres.P3           ; edo_pres.BP1          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.787      ;
+; -3.119 ; edo_pres.P2           ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.786      ;
+; -3.098 ; edo_pres.PB           ; edo_pres.SP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.765      ;
+; -3.009 ; edo_pres.P1           ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.676      ;
+; -2.948 ; edo_pres.DETECTA_PISO ; edo_pres.PB           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.615      ;
+; -2.896 ; edo_pres.SP1          ; edo_pres.SP1          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.563      ;
+; -2.877 ; edo_pres.DPB          ; edo_pres.PB           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.544      ;
+; -2.835 ; edo_pres.DP3          ; edo_pres.P3           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.502      ;
+; -2.820 ; edo_pres.P1           ; edo_pres.SP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.487      ;
+; -2.743 ; edo_pres.DETECTA_PISO ; edo_pres.P3           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.410      ;
+; -2.705 ; edo_pres.P3           ; edo_pres.P3           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.372      ;
+; -2.624 ; edo_pres.P2           ; edo_pres.P2           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.291      ;
+; -2.623 ; edo_pres.SP2          ; edo_pres.DP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.290      ;
+; -2.593 ; edo_pres.DP2          ; edo_pres.P2           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.260      ;
+; -2.576 ; edo_pres.PB           ; edo_pres.PB           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.243      ;
+; -2.574 ; edo_pres.P3           ; edo_pres.BP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.241      ;
+; -2.560 ; edo_pres.SP3          ; edo_pres.DP3          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.227      ;
+; -2.427 ; edo_pres.SP1          ; edo_pres.DP1          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.094      ;
+; -2.411 ; edo_pres.P1           ; edo_pres.P1           ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 3.078      ;
+; -2.153 ; edo_pres.SP2          ; edo_pres.SP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.820      ;
+; -1.911 ; edo_pres.PB           ; edo_pres.SP1          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.578      ;
+; -1.763 ; edo_pres.DETECTA_PISO ; edo_pres.DETECTA_PISO ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.430      ;
+; -1.718 ; edo_pres.BP2          ; edo_pres.BP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.385      ;
+; -1.680 ; edo_pres.SP3          ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.347      ;
+; -1.661 ; edo_pres.BPB          ; edo_pres.DPB          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.328      ;
+; -1.490 ; edo_pres.BPB          ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 2.157      ;
+; -1.252 ; edo_pres.BP2          ; edo_pres.DP2          ; divi[23]     ; divi[23]    ; 1.000        ; 0.000      ; 1.919      ;
+; -0.015 ; sensor_P2             ; edo_pres.BP2          ; sensor_P2    ; divi[23]    ; 0.500        ; 4.721      ; 4.903      ;
+; -0.012 ; sensor_P2             ; edo_pres.DP2          ; sensor_P2    ; divi[23]    ; 0.500        ; 4.721      ; 4.900      ;
+; 0.037  ; sensor_P2             ; edo_pres.DETECTA_PISO ; sensor_P2    ; divi[23]    ; 0.500        ; 4.721      ; 4.851      ;
+; 0.054  ; sensor_P2             ; edo_pres.SP2          ; sensor_P2    ; divi[23]    ; 0.500        ; 4.721      ; 4.834      ;
+; 0.095  ; sensor_P2             ; edo_pres.P3           ; sensor_P2    ; divi[23]    ; 0.500        ; 4.721      ; 4.793      ;
+; 0.133  ; sensor_P2             ; edo_pres.P2           ; sensor_P2    ; divi[23]    ; 0.500        ; 4.721      ; 4.755      ;
+; 0.485  ; sensor_P2             ; edo_pres.BP2          ; sensor_P2    ; divi[23]    ; 1.000        ; 4.721      ; 4.903      ;
+; 0.488  ; sensor_P2             ; edo_pres.DP2          ; sensor_P2    ; divi[23]    ; 1.000        ; 4.721      ; 4.900      ;
+; 0.537  ; sensor_P2             ; edo_pres.DETECTA_PISO ; sensor_P2    ; divi[23]    ; 1.000        ; 4.721      ; 4.851      ;
+; 0.554  ; sensor_P2             ; edo_pres.SP2          ; sensor_P2    ; divi[23]    ; 1.000        ; 4.721      ; 4.834      ;
+; 0.595  ; sensor_P2             ; edo_pres.P3           ; sensor_P2    ; divi[23]    ; 1.000        ; 4.721      ; 4.793      ;
+; 0.633  ; sensor_P2             ; edo_pres.P2           ; sensor_P2    ; divi[23]    ; 1.000        ; 4.721      ; 4.755      ;
+; 2.361  ; edo_pres.BP1          ; edo_pres.DP1          ; edo_pres.BP1 ; divi[23]    ; 0.500        ; 4.721      ; 2.903      ;
+; 2.861  ; edo_pres.BP1          ; edo_pres.DP1          ; edo_pres.BP1 ; divi[23]    ; 1.000        ; 4.721      ; 2.903      ;
+; 2.893  ; edo_pres.BP1          ; edo_pres.BP1          ; edo_pres.BP1 ; divi[23]    ; 0.500        ; 4.721      ; 2.371      ;
+; 3.393  ; edo_pres.BP1          ; edo_pres.BP1          ; edo_pres.BP1 ; divi[23]    ; 1.000        ; 4.721      ; 2.371      ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Setup: 'edo_pres.BP1'                                                                                  ;
++--------+--------------+---------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+---------+--------------+--------------+--------------+------------+------------+
+; -3.825 ; edo_pres.DPB ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 1.000        ; 0.232      ; 2.705      ;
+; -3.635 ; edo_pres.DP3 ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 1.000        ; 0.232      ; 2.515      ;
+; -3.546 ; edo_pres.DP1 ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 1.000        ; 0.232      ; 2.426      ;
+; -3.482 ; edo_pres.DP2 ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 1.000        ; 0.232      ; 2.362      ;
++--------+--------------+---------+--------------+--------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup: 'divi[19]'                                                                                        ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -1.717 ; cont_buz[1] ; cont_buz[2] ; divi[19]     ; divi[19]    ; 1.000        ; 0.000      ; 2.384      ;
+; -1.715 ; cont_buz[1] ; cont_buz[1] ; divi[19]     ; divi[19]    ; 1.000        ; 0.000      ; 2.382      ;
+; -1.452 ; cont_buz[2] ; cont_buz[2] ; divi[19]     ; divi[19]    ; 1.000        ; 0.000      ; 2.119      ;
+; -1.260 ; cont_buz[0] ; cont_buz[1] ; divi[19]     ; divi[19]    ; 1.000        ; 0.000      ; 1.927      ;
+; -1.259 ; cont_buz[0] ; cont_buz[2] ; divi[19]     ; divi[19]    ; 1.000        ; 0.000      ; 1.926      ;
+; -1.258 ; cont_buz[0] ; cont_buz[0] ; divi[19]     ; divi[19]    ; 1.000        ; 0.000      ; 1.925      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'divi[23]'                                                                                                             ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -2.947 ; edo_pres.BP1          ; edo_pres.BP1          ; edo_pres.BP1 ; divi[23]    ; 0.000        ; 4.721      ; 2.371      ;
+; -2.447 ; edo_pres.BP1          ; edo_pres.BP1          ; edo_pres.BP1 ; divi[23]    ; -0.500       ; 4.721      ; 2.371      ;
+; -2.415 ; edo_pres.BP1          ; edo_pres.DP1          ; edo_pres.BP1 ; divi[23]    ; 0.000        ; 4.721      ; 2.903      ;
+; -1.915 ; edo_pres.BP1          ; edo_pres.DP1          ; edo_pres.BP1 ; divi[23]    ; -0.500       ; 4.721      ; 2.903      ;
+; -0.187 ; sensor_P2             ; edo_pres.P2           ; sensor_P2    ; divi[23]    ; 0.000        ; 4.721      ; 4.755      ;
+; -0.149 ; sensor_P2             ; edo_pres.P3           ; sensor_P2    ; divi[23]    ; 0.000        ; 4.721      ; 4.793      ;
+; -0.108 ; sensor_P2             ; edo_pres.SP2          ; sensor_P2    ; divi[23]    ; 0.000        ; 4.721      ; 4.834      ;
+; -0.091 ; sensor_P2             ; edo_pres.DETECTA_PISO ; sensor_P2    ; divi[23]    ; 0.000        ; 4.721      ; 4.851      ;
+; -0.042 ; sensor_P2             ; edo_pres.DP2          ; sensor_P2    ; divi[23]    ; 0.000        ; 4.721      ; 4.900      ;
+; -0.039 ; sensor_P2             ; edo_pres.BP2          ; sensor_P2    ; divi[23]    ; 0.000        ; 4.721      ; 4.903      ;
+; 0.313  ; sensor_P2             ; edo_pres.P2           ; sensor_P2    ; divi[23]    ; -0.500       ; 4.721      ; 4.755      ;
+; 0.351  ; sensor_P2             ; edo_pres.P3           ; sensor_P2    ; divi[23]    ; -0.500       ; 4.721      ; 4.793      ;
+; 0.392  ; sensor_P2             ; edo_pres.SP2          ; sensor_P2    ; divi[23]    ; -0.500       ; 4.721      ; 4.834      ;
+; 0.409  ; sensor_P2             ; edo_pres.DETECTA_PISO ; sensor_P2    ; divi[23]    ; -0.500       ; 4.721      ; 4.851      ;
+; 0.458  ; sensor_P2             ; edo_pres.DP2          ; sensor_P2    ; divi[23]    ; -0.500       ; 4.721      ; 4.900      ;
+; 0.461  ; sensor_P2             ; edo_pres.BP2          ; sensor_P2    ; divi[23]    ; -0.500       ; 4.721      ; 4.903      ;
+; 1.698  ; edo_pres.BP2          ; edo_pres.DP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 1.919      ;
+; 1.936  ; edo_pres.BPB          ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.157      ;
+; 2.107  ; edo_pres.BPB          ; edo_pres.DPB          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.328      ;
+; 2.126  ; edo_pres.SP3          ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.164  ; edo_pres.BP2          ; edo_pres.BP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.385      ;
+; 2.209  ; edo_pres.DETECTA_PISO ; edo_pres.DETECTA_PISO ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.430      ;
+; 2.357  ; edo_pres.PB           ; edo_pres.SP1          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.578      ;
+; 2.599  ; edo_pres.SP2          ; edo_pres.SP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 2.820      ;
+; 2.857  ; edo_pres.P1           ; edo_pres.P1           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.078      ;
+; 2.873  ; edo_pres.SP1          ; edo_pres.DP1          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.094      ;
+; 3.006  ; edo_pres.SP3          ; edo_pres.DP3          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.227      ;
+; 3.020  ; edo_pres.P3           ; edo_pres.BP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.241      ;
+; 3.022  ; edo_pres.PB           ; edo_pres.PB           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.243      ;
+; 3.039  ; edo_pres.DP2          ; edo_pres.P2           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.260      ;
+; 3.069  ; edo_pres.SP2          ; edo_pres.DP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.070  ; edo_pres.P2           ; edo_pres.P2           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.291      ;
+; 3.151  ; edo_pres.P3           ; edo_pres.P3           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.372      ;
+; 3.189  ; edo_pres.DETECTA_PISO ; edo_pres.P3           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.410      ;
+; 3.266  ; edo_pres.P1           ; edo_pres.SP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.487      ;
+; 3.281  ; edo_pres.DP3          ; edo_pres.P3           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.502      ;
+; 3.323  ; edo_pres.DPB          ; edo_pres.PB           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.544      ;
+; 3.342  ; edo_pres.SP1          ; edo_pres.SP1          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.563      ;
+; 3.394  ; edo_pres.DETECTA_PISO ; edo_pres.PB           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.615      ;
+; 3.455  ; edo_pres.P1           ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.676      ;
+; 3.544  ; edo_pres.PB           ; edo_pres.SP2          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.765      ;
+; 3.565  ; edo_pres.P2           ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.786      ;
+; 3.566  ; edo_pres.P3           ; edo_pres.BP1          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.787      ;
+; 3.578  ; edo_pres.DETECTA_PISO ; edo_pres.P2           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.799      ;
+; 3.635  ; edo_pres.DETECTA_PISO ; edo_pres.P1           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 3.856      ;
+; 3.872  ; edo_pres.P3           ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 4.093      ;
+; 3.946  ; edo_pres.DP1          ; edo_pres.P1           ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 4.167      ;
+; 3.948  ; edo_pres.P2           ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 4.169      ;
+; 4.003  ; edo_pres.P2           ; edo_pres.BP1          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 4.224      ;
+; 4.095  ; edo_pres.P1           ; edo_pres.BPB          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 4.316      ;
+; 4.335  ; edo_pres.PB           ; edo_pres.SP3          ; divi[23]     ; divi[23]    ; 0.000        ; 0.000      ; 4.556      ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold: 'sensor_P2'                                                                                         ;
++--------+--------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+-------------+--------------+-------------+--------------+------------+------------+
+; -2.891 ; edo_pres.BP1 ; BAJAR$latch ; edo_pres.BP1 ; sensor_P2   ; 0.000        ; 5.082      ; 2.567      ;
+; -2.391 ; edo_pres.BP1 ; BAJAR$latch ; edo_pres.BP1 ; sensor_P2   ; -0.500       ; 5.082      ; 2.567      ;
+; 2.171  ; edo_pres.BP2 ; BAJAR$latch ; divi[23]     ; sensor_P2   ; -0.500       ; 0.361      ; 2.032      ;
+; 2.510  ; edo_pres.BPB ; BAJAR$latch ; divi[23]     ; sensor_P2   ; -0.500       ; 0.361      ; 2.371      ;
+; 2.597  ; edo_pres.SP1 ; SUBIR$latch ; divi[23]     ; sensor_P2   ; -0.500       ; 0.255      ; 2.352      ;
+; 2.641  ; edo_pres.SP2 ; SUBIR$latch ; divi[23]     ; sensor_P2   ; -0.500       ; 0.255      ; 2.396      ;
+; 2.781  ; edo_pres.SP3 ; SUBIR$latch ; divi[23]     ; sensor_P2   ; -0.500       ; 0.255      ; 2.536      ;
++--------+--------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Hold: 'reloj'                                                                                              ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -2.194 ; divi_mat[10] ; divi_mat[10] ; divi_mat[10] ; reloj       ; 0.000        ; 3.458      ; 1.861      ;
+; -1.786 ; divi[23]     ; divi[23]     ; divi[23]     ; reloj       ; 0.000        ; 3.458      ; 2.269      ;
+; -1.717 ; divi[19]     ; divi[19]     ; divi[19]     ; reloj       ; 0.000        ; 3.458      ; 2.338      ;
+; -1.694 ; divi_mat[10] ; divi_mat[10] ; divi_mat[10] ; reloj       ; -0.500       ; 3.458      ; 1.861      ;
+; -1.286 ; divi[23]     ; divi[23]     ; divi[23]     ; reloj       ; -0.500       ; 3.458      ; 2.269      ;
+; -1.217 ; divi[19]     ; divi[19]     ; divi[19]     ; reloj       ; -0.500       ; 3.458      ; 2.338      ;
+; -0.885 ; divi[19]     ; divi[20]     ; divi[19]     ; reloj       ; 0.000        ; 3.458      ; 3.170      ;
+; -0.774 ; divi[19]     ; divi[21]     ; divi[19]     ; reloj       ; 0.000        ; 3.458      ; 3.281      ;
+; -0.385 ; divi[19]     ; divi[20]     ; divi[19]     ; reloj       ; -0.500       ; 3.458      ; 3.170      ;
+; -0.305 ; divi[19]     ; divi[23]     ; divi[19]     ; reloj       ; 0.000        ; 3.458      ; 3.750      ;
+; -0.305 ; divi[19]     ; divi[22]     ; divi[19]     ; reloj       ; 0.000        ; 3.458      ; 3.750      ;
+; -0.274 ; divi[19]     ; divi[21]     ; divi[19]     ; reloj       ; -0.500       ; 3.458      ; 3.281      ;
+; 0.195  ; divi[19]     ; divi[23]     ; divi[19]     ; reloj       ; -0.500       ; 3.458      ; 3.750      ;
+; 0.195  ; divi[19]     ; divi[22]     ; divi[19]     ; reloj       ; -0.500       ; 3.458      ; 3.750      ;
+; 1.649  ; D[0]         ; D[0]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 1.870      ;
+; 2.116  ; divi[17]     ; divi[17]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; D[8]         ; D[8]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; D[15]        ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; divi[18]     ; divi[18]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; D[10]        ; D[10]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; D[9]         ; D[9]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.128  ; C[16]        ; C[16]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.349      ;
+; 2.151  ; D[7]         ; D[7]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.372      ;
+; 2.212  ; D[1]         ; D[1]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221  ; D[11]        ; D[11]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; divi[22]     ; divi[22]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; divi[20]     ; divi[20]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222  ; divi[21]     ; divi[21]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.443      ;
+; 2.249  ; D[12]        ; D[12]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.470      ;
+; 2.260  ; D[14]        ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.481      ;
+; 2.261  ; D[13]        ; D[13]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.482      ;
+; 2.494  ; D[2]         ; D[2]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.715      ;
+; 2.503  ; D[0]         ; D[1]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.724      ;
+; 2.567  ; D[4]         ; D[4]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.788      ;
+; 2.568  ; D[6]         ; D[6]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.789      ;
+; 2.679  ; D[3]         ; D[3]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 2.900      ;
+; 2.948  ; divi[17]     ; divi[18]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; D[8]         ; D[9]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949  ; divi[18]     ; divi[19]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; D[10]        ; D[11]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; D[9]         ; D[10]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.170      ;
+; 3.059  ; divi[17]     ; divi[19]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; D[8]         ; D[10]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060  ; D[10]        ; D[12]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; divi[18]     ; divi[20]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; D[9]         ; D[11]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.281      ;
+; 3.152  ; D[1]         ; D[2]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161  ; divi[22]     ; divi[23]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; divi[20]     ; divi[21]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; D[11]        ; D[12]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170  ; divi[17]     ; divi[20]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; D[8]         ; D[11]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171  ; D[9]         ; D[12]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171  ; divi[18]     ; divi[21]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.392      ;
+; 3.200  ; D[14]        ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.421      ;
+; 3.201  ; D[13]        ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.422      ;
+; 3.233  ; D[5]         ; D[5]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.454      ;
+; 3.281  ; D[8]         ; D[12]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; divi[17]     ; divi[21]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.502      ;
+; 3.312  ; D[13]        ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.533      ;
+; 3.335  ; D[0]         ; D[2]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.556      ;
+; 3.399  ; D[4]         ; D[5]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.620      ;
+; 3.400  ; D[6]         ; D[7]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.621      ;
+; 3.483  ; divi[21]     ; divi[23]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.704      ;
+; 3.483  ; divi[21]     ; divi[22]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.704      ;
+; 3.510  ; D[12]        ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.731      ;
+; 3.510  ; D[12]        ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.731      ;
+; 3.510  ; D[12]        ; D[13]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.731      ;
+; 3.510  ; D[4]         ; D[6]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.731      ;
+; 3.529  ; D[10]        ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529  ; D[10]        ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529  ; D[10]        ; D[13]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.750      ;
+; 3.569  ; D[7]         ; divi_mat[10] ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.790      ;
+; 3.619  ; D[3]         ; D[4]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.840      ;
+; 3.621  ; D[1]         ; D[7]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621  ; D[1]         ; D[6]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621  ; D[1]         ; D[5]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621  ; D[1]         ; D[4]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621  ; D[1]         ; D[3]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621  ; D[4]         ; D[7]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.842      ;
+; 3.630  ; divi[20]     ; divi[23]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; divi[20]     ; divi[22]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; D[11]        ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; D[11]        ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630  ; D[11]        ; D[13]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.851      ;
+; 3.640  ; D[9]         ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640  ; D[9]         ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640  ; D[9]         ; D[13]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640  ; divi[18]     ; divi[23]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640  ; divi[18]     ; divi[22]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.861      ;
+; 3.717  ; D[6]         ; divi_mat[10] ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.938      ;
+; 3.730  ; D[3]         ; D[5]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.951      ;
+; 3.750  ; D[8]         ; D[15]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; D[8]         ; D[14]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; D[8]         ; D[13]        ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; divi[17]     ; divi[23]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; divi[17]     ; divi[22]     ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.971      ;
+; 3.754  ; D[2]         ; D[7]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.975      ;
+; 3.754  ; D[2]         ; D[6]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.975      ;
+; 3.754  ; D[2]         ; D[5]         ; reloj        ; reloj       ; 0.000        ; 0.000      ; 3.975      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Hold: 'divi_mat[10]'                                                                                     ;
++-------+-------------+-------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+--------------+--------------+------------+------------+
+; 1.650 ; Q2[0]~reg0  ; Q2[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 1.871      ;
+; 2.126 ; Q3[5]~reg0  ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.347      ;
+; 2.135 ; Q3[4]~reg0  ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.356      ;
+; 2.147 ; Q2[1]~reg0  ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.368      ;
+; 2.150 ; Q3[6]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.371      ;
+; 2.152 ; Q3[7]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.373      ;
+; 2.202 ; Q1[1]~reg0  ; Q1[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.423      ;
+; 2.211 ; Q1[1]~reg0  ; Q1[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.432      ;
+; 2.230 ; Q3[1]~reg0  ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; Q1[0]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.452      ;
+; 2.239 ; Q3[0]~reg0  ; Q3[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.460      ;
+; 2.240 ; Q3[9]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.461      ;
+; 2.241 ; Q3[8]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.462      ;
+; 2.241 ; Q3[3]~reg0  ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.462      ;
+; 2.248 ; Q3[10]~reg0 ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.469      ;
+; 2.298 ; Q1[2]~reg0  ; Q1[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.519      ;
+; 2.605 ; Q3[2]~reg0  ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.826      ;
+; 2.699 ; Q1[0]~reg0  ; Q1[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.920      ;
+; 2.703 ; Q1[0]~reg0  ; Q1[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 2.924      ;
+; 2.958 ; Q3[5]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.179      ;
+; 2.982 ; Q3[6]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.203      ;
+; 2.984 ; Q3[7]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.205      ;
+; 3.035 ; Q2[2]~reg0  ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.256      ;
+; 3.069 ; Q3[5]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.290      ;
+; 3.093 ; Q3[6]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.314      ;
+; 3.095 ; Q3[7]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.316      ;
+; 3.170 ; Q3[1]~reg0  ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.391      ;
+; 3.179 ; Q3[0]~reg0  ; Q3[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.400      ;
+; 3.180 ; Q3[5]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.401      ;
+; 3.181 ; Q3[3]~reg0  ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.402      ;
+; 3.181 ; Q3[8]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.402      ;
+; 3.204 ; Q3[6]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.425      ;
+; 3.281 ; Q3[1]~reg0  ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.502      ;
+; 3.290 ; Q3[0]~reg0  ; Q3[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.511      ;
+; 3.291 ; Q3[5]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.512      ;
+; 3.392 ; Q3[1]~reg0  ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.613      ;
+; 3.398 ; Q3[10]~reg0 ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.619      ;
+; 3.399 ; Q3[10]~reg0 ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.620      ;
+; 3.401 ; Q3[0]~reg0  ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.622      ;
+; 3.443 ; Q3[0]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.664      ;
+; 3.501 ; Q3[9]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.722      ;
+; 3.505 ; Q3[1]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.726      ;
+; 3.508 ; Q2[0]~reg0  ; Q2[2]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.729      ;
+; 3.512 ; Q3[0]~reg0  ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.733      ;
+; 3.545 ; Q3[2]~reg0  ; Q3[3]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.766      ;
+; 3.556 ; Q3[7]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.777      ;
+; 3.557 ; Q3[7]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.778      ;
+; 3.564 ; Q3[7]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.785      ;
+; 3.601 ; Q3[2]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.822      ;
+; 3.604 ; Q2[1]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.825      ;
+; 3.650 ; Q3[8]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.871      ;
+; 3.656 ; Q3[2]~reg0  ; Q3[4]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.877      ;
+; 3.673 ; Q3[6]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.894      ;
+; 3.727 ; Q3[8]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.948      ;
+; 3.728 ; Q3[8]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.949      ;
+; 3.734 ; Q2[1]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.955      ;
+; 3.760 ; Q3[5]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.981      ;
+; 3.777 ; Q3[3]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 3.998      ;
+; 3.786 ; Q3[4]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.007      ;
+; 3.799 ; Q3[4]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.020      ;
+; 3.799 ; Q3[4]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.020      ;
+; 3.799 ; Q3[4]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.020      ;
+; 3.799 ; Q3[4]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.020      ;
+; 3.799 ; Q3[4]~reg0  ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.020      ;
+; 3.888 ; Q3[5]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.109      ;
+; 3.889 ; Q3[5]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.110      ;
+; 3.922 ; Q3[9]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.143      ;
+; 3.923 ; Q3[9]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.144      ;
+; 4.016 ; Q2[0]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.237      ;
+; 4.016 ; Q2[0]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.237      ;
+; 4.031 ; Q3[3]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.252      ;
+; 4.044 ; Q3[3]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.265      ;
+; 4.044 ; Q3[3]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.265      ;
+; 4.044 ; Q3[3]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.265      ;
+; 4.044 ; Q3[3]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.265      ;
+; 4.044 ; Q3[3]~reg0  ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.265      ;
+; 4.095 ; Q3[6]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.316      ;
+; 4.096 ; Q3[6]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.317      ;
+; 4.178 ; Q2[2]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.399      ;
+; 4.178 ; Q2[2]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.399      ;
+; 4.242 ; Q3[1]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.463      ;
+; 4.255 ; Q3[1]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.476      ;
+; 4.255 ; Q3[1]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.476      ;
+; 4.255 ; Q3[1]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.476      ;
+; 4.255 ; Q3[1]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.476      ;
+; 4.255 ; Q3[1]~reg0  ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.476      ;
+; 4.362 ; Q3[0]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.583      ;
+; 4.375 ; Q3[0]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.596      ;
+; 4.375 ; Q3[0]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.596      ;
+; 4.375 ; Q3[0]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.596      ;
+; 4.375 ; Q3[0]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.596      ;
+; 4.375 ; Q3[0]~reg0  ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.596      ;
+; 4.506 ; Q3[2]~reg0  ; Q3[10]~reg0 ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.727      ;
+; 4.519 ; Q3[2]~reg0  ; Q3[9]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.740      ;
+; 4.519 ; Q3[2]~reg0  ; Q3[8]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.740      ;
+; 4.519 ; Q3[2]~reg0  ; Q3[7]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.740      ;
+; 4.519 ; Q3[2]~reg0  ; Q3[6]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.740      ;
+; 4.519 ; Q3[2]~reg0  ; Q3[5]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.740      ;
+; 4.568 ; Q3[4]~reg0  ; Q1[0]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.789      ;
+; 4.569 ; Q3[4]~reg0  ; Q2[1]~reg0  ; divi_mat[10] ; divi_mat[10] ; 0.000        ; 0.000      ; 4.790      ;
++-------+-------------+-------------+--------------+--------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Hold: 'divi[19]'                                                                                        ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 1.704 ; cont_buz[0] ; cont_buz[0] ; divi[19]     ; divi[19]    ; 0.000        ; 0.000      ; 1.925      ;
+; 1.705 ; cont_buz[0] ; cont_buz[2] ; divi[19]     ; divi[19]    ; 0.000        ; 0.000      ; 1.926      ;
+; 1.706 ; cont_buz[0] ; cont_buz[1] ; divi[19]     ; divi[19]    ; 0.000        ; 0.000      ; 1.927      ;
+; 1.898 ; cont_buz[2] ; cont_buz[2] ; divi[19]     ; divi[19]    ; 0.000        ; 0.000      ; 2.119      ;
+; 2.161 ; cont_buz[1] ; cont_buz[1] ; divi[19]     ; divi[19]    ; 0.000        ; 0.000      ; 2.382      ;
+; 2.163 ; cont_buz[1] ; cont_buz[2] ; divi[19]     ; divi[19]    ; 0.000        ; 0.000      ; 2.384      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold: 'edo_pres.BP1'                                                                                  ;
++-------+--------------+---------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+---------+--------------+--------------+--------------+------------+------------+
+; 2.130 ; edo_pres.DP2 ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 0.000        ; 0.232      ; 2.362      ;
+; 2.194 ; edo_pres.DP1 ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 0.000        ; 0.232      ; 2.426      ;
+; 2.283 ; edo_pres.DP3 ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 0.000        ; 0.232      ; 2.515      ;
+; 2.473 ; edo_pres.DPB ; B_ena   ; divi[23]     ; edo_pres.BP1 ; 0.000        ; 0.232      ; 2.705      ;
++-------+--------------+---------+--------------+--------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'reloj'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; reloj ; Rise       ; reloj            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; C[16]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; C[16]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[0]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[0]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[10]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[10]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[11]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[11]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[12]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[12]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[13]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[13]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[14]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[14]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[15]            ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[15]            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[1]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[1]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[2]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[2]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[3]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[3]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[4]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[4]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[5]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[5]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[6]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[6]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[7]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[7]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[8]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[8]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; D[9]             ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; D[9]             ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[17]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[17]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[18]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[18]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[19]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[19]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[20]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[20]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[21]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[21]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[22]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[22]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi[23]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi[23]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; reloj ; Rise       ; divi_mat[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; reloj ; Rise       ; divi_mat[10]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; C[16]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; C[16]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[10]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[10]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[11]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[11]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[12]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[12]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[13]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[13]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[14]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[14]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[15]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[15]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[3]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[3]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[4]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[4]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[5]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[5]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[6]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[6]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[7]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[7]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[8]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[8]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; D[9]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; D[9]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[17]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[17]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[18]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[18]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[19]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[19]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[20]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[20]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[21]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[21]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[22]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[22]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi[23]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reloj ; Rise       ; divi[23]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reloj ; Rise       ; divi_mat[10]|clk ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'sensor_P2'                                                                         ;
++--------+--------------+----------------+------------------+-----------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target              ;
++--------+--------------+----------------+------------------+-----------+------------+---------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; sensor_P2 ; Rise       ; sensor_P2           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Fall       ; BAJAR$latch         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Fall       ; BAJAR$latch         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Rise       ; BAJAR$latch|datac   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Rise       ; BAJAR$latch|datac   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Fall       ; SUBIR$latch         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Fall       ; SUBIR$latch         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Rise       ; SUBIR$latch|dataa   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Rise       ; SUBIR$latch|dataa   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Rise       ; Selector6~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Rise       ; Selector6~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Rise       ; Selector6~0|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Rise       ; Selector6~0|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sensor_P2 ; Rise       ; sensor_P2|combout   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sensor_P2 ; Rise       ; sensor_P2|combout   ;
++--------+--------------+----------------+------------------+-----------+------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'divi[19]'                                                                    ;
++-------+--------------+----------------+------------------+----------+------------+-----------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target          ;
++-------+--------------+----------------+------------------+----------+------------+-----------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[19] ; Rise       ; cont_buz[0]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[19] ; Rise       ; cont_buz[0]     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[19] ; Rise       ; cont_buz[1]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[19] ; Rise       ; cont_buz[1]     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[19] ; Rise       ; cont_buz[2]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[19] ; Rise       ; cont_buz[2]     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[19] ; Rise       ; cont_buz[0]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[19] ; Rise       ; cont_buz[0]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[19] ; Rise       ; cont_buz[1]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[19] ; Rise       ; cont_buz[1]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[19] ; Rise       ; cont_buz[2]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[19] ; Rise       ; cont_buz[2]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[19] ; Rise       ; divi[19]|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[19] ; Rise       ; divi[19]|regout ;
++-------+--------------+----------------+------------------+----------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'divi[23]'                                                                              ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.BP1              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.BP1              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.BP2              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.BP2              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.BPB              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.BPB              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DETECTA_PISO     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DETECTA_PISO     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DP1              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DP1              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DP2              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DP2              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DP3              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DP3              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DPB              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DPB              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.P1               ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.P1               ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.P2               ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.P2               ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.P3               ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.P3               ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.PB               ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.PB               ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.SP1              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.SP1              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.SP2              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.SP2              ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.SP3              ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.SP3              ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; divi[23]|regout           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; divi[23]|regout           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.BP1|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.BP1|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.BP2|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.BP2|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.BPB|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.BPB|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DETECTA_PISO|clk ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DETECTA_PISO|clk ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DP1|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DP1|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DP2|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DP2|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DP3|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DP3|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.DPB|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.DPB|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.P1|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.P1|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.P2|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.P2|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.P3|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.P3|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.PB|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.PB|clk           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.SP1|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.SP1|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.SP2|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.SP2|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi[23] ; Rise       ; edo_pres.SP3|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi[23] ; Rise       ; edo_pres.SP3|clk          ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'divi_mat[10]'                                                                        ;
++-------+--------------+----------------+------------------+--------------+------------+---------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock        ; Clock Edge ; Target              ;
++-------+--------------+----------------+------------------+--------------+------------+---------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q1[0]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q1[0]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q1[1]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q1[1]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q1[2]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q1[2]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q2[0]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q2[0]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q2[1]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q2[1]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q2[2]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q2[2]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[0]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[0]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[10]~reg0         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[10]~reg0         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[1]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[1]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[2]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[2]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[3]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[3]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[4]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[4]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[5]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[5]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[6]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[6]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[7]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[7]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[8]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[8]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[9]~reg0          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[9]~reg0          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q1[0]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q1[0]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q1[1]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q1[1]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q1[2]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q1[2]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q2[0]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q2[0]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q2[1]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q2[1]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q2[2]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q2[2]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[0]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[0]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[10]~reg0|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[10]~reg0|clk     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[1]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[1]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[2]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[2]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[3]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[3]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[4]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[4]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[5]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[5]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[6]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[6]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[7]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[7]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[8]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[8]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; Q3[9]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; Q3[9]~reg0|clk      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; divi_mat[10] ; Rise       ; divi_mat[10]|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; divi_mat[10] ; Rise       ; divi_mat[10]|regout ;
++-------+--------------+----------------+------------------+--------------+------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'edo_pres.BP1'                                                                        ;
++-------+--------------+----------------+------------------+--------------+------------+---------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock        ; Clock Edge ; Target              ;
++-------+--------------+----------------+------------------+--------------+------------+---------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; B_ena               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; B_ena               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; B_ena|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; B_ena|datab         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; WideOr1|combout     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; WideOr1|combout     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; WideOr1|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; WideOr1|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; WideOr1~5|combout   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; WideOr1~5|combout   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; WideOr1~5|datab     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; WideOr1~5|datab     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; edo_pres.BP1 ; Rise       ; edo_pres.BP1|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; edo_pres.BP1 ; Rise       ; edo_pres.BP1|regout ;
++-------+--------------+----------------+------------------+--------------+------------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; boton_P1  ; divi[23]   ; 6.369 ; 6.369 ; Rise       ; divi[23]        ;
+; boton_P2  ; divi[23]   ; 4.528 ; 4.528 ; Rise       ; divi[23]        ;
+; boton_P3  ; divi[23]   ; 3.848 ; 3.848 ; Rise       ; divi[23]        ;
+; boton_PB  ; divi[23]   ; 5.913 ; 5.913 ; Rise       ; divi[23]        ;
+; sensor_P1 ; divi[23]   ; 3.928 ; 3.928 ; Rise       ; divi[23]        ;
+; sensor_P2 ; divi[23]   ; 0.515 ; 0.515 ; Rise       ; divi[23]        ;
+; sensor_P3 ; divi[23]   ; 2.750 ; 2.750 ; Rise       ; divi[23]        ;
+; sensor_PB ; divi[23]   ; 4.045 ; 4.045 ; Rise       ; divi[23]        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; boton_P1  ; divi[23]   ; -1.472 ; -1.472 ; Rise       ; divi[23]        ;
+; boton_P2  ; divi[23]   ; -1.237 ; -1.237 ; Rise       ; divi[23]        ;
+; boton_P3  ; divi[23]   ; -2.142 ; -2.142 ; Rise       ; divi[23]        ;
+; boton_PB  ; divi[23]   ; -1.438 ; -1.438 ; Rise       ; divi[23]        ;
+; sensor_P1 ; divi[23]   ; -1.065 ; -1.065 ; Rise       ; divi[23]        ;
+; sensor_P2 ; divi[23]   ; 0.187  ; 0.187  ; Rise       ; divi[23]        ;
+; sensor_P3 ; divi[23]   ; -1.548 ; -1.548 ; Rise       ; divi[23]        ;
+; sensor_PB ; divi[23]   ; -0.724 ; -0.724 ; Rise       ; divi[23]        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-----------+--------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+--------------+--------+--------+------------+-----------------+
+; buzzer    ; divi[19]     ; 15.476 ; 15.476 ; Rise       ; divi[19]        ;
+; l_P1      ; divi[19]     ; 7.198  ;        ; Rise       ; divi[19]        ;
+; l_P2      ; divi[19]     ; 8.745  ;        ; Rise       ; divi[19]        ;
+; l_P3      ; divi[19]     ; 7.657  ;        ; Rise       ; divi[19]        ;
+; l_PB      ; divi[19]     ; 6.413  ;        ; Rise       ; divi[19]        ;
+; l_P1      ; divi[19]     ;        ; 7.198  ; Fall       ; divi[19]        ;
+; l_P2      ; divi[19]     ;        ; 8.745  ; Fall       ; divi[19]        ;
+; l_P3      ; divi[19]     ;        ; 7.657  ; Fall       ; divi[19]        ;
+; l_PB      ; divi[19]     ;        ; 6.413  ; Fall       ; divi[19]        ;
+; COL[*]    ; divi[23]     ; 23.228 ; 23.228 ; Rise       ; divi[23]        ;
+;  COL[0]   ; divi[23]     ; 16.755 ; 16.755 ; Rise       ; divi[23]        ;
+;  COL[1]   ; divi[23]     ; 20.781 ; 20.781 ; Rise       ; divi[23]        ;
+;  COL[2]   ; divi[23]     ; 19.667 ; 19.667 ; Rise       ; divi[23]        ;
+;  COL[3]   ; divi[23]     ; 19.926 ; 19.926 ; Rise       ; divi[23]        ;
+;  COL[4]   ; divi[23]     ; 17.616 ; 17.616 ; Rise       ; divi[23]        ;
+;  COL[5]   ; divi[23]     ; 23.228 ; 23.228 ; Rise       ; divi[23]        ;
+;  COL[6]   ; divi[23]     ; 20.008 ; 20.008 ; Rise       ; divi[23]        ;
+;  COL[7]   ; divi[23]     ; 15.791 ; 15.791 ; Rise       ; divi[23]        ;
+; l_P1      ; divi[23]     ; 13.457 ; 13.457 ; Rise       ; divi[23]        ;
+; l_P2      ; divi[23]     ; 16.719 ; 16.719 ; Rise       ; divi[23]        ;
+; l_P3      ; divi[23]     ; 15.049 ; 15.049 ; Rise       ; divi[23]        ;
+; l_PB      ; divi[23]     ; 14.861 ; 14.861 ; Rise       ; divi[23]        ;
+; COL[*]    ; divi_mat[10] ; 23.607 ; 23.607 ; Rise       ; divi_mat[10]    ;
+;  COL[0]   ; divi_mat[10] ; 23.504 ; 23.504 ; Rise       ; divi_mat[10]    ;
+;  COL[1]   ; divi_mat[10] ; 18.846 ; 18.846 ; Rise       ; divi_mat[10]    ;
+;  COL[2]   ; divi_mat[10] ; 20.351 ; 20.351 ; Rise       ; divi_mat[10]    ;
+;  COL[3]   ; divi_mat[10] ; 20.104 ; 20.104 ; Rise       ; divi_mat[10]    ;
+;  COL[4]   ; divi_mat[10] ; 19.273 ; 19.273 ; Rise       ; divi_mat[10]    ;
+;  COL[5]   ; divi_mat[10] ; 23.479 ; 23.479 ; Rise       ; divi_mat[10]    ;
+;  COL[6]   ; divi_mat[10] ; 23.607 ; 23.607 ; Rise       ; divi_mat[10]    ;
+;  COL[7]   ; divi_mat[10] ; 15.093 ; 15.093 ; Rise       ; divi_mat[10]    ;
+; Q1[*]     ; divi_mat[10] ; 10.851 ; 10.851 ; Rise       ; divi_mat[10]    ;
+;  Q1[0]    ; divi_mat[10] ; 9.087  ; 9.087  ; Rise       ; divi_mat[10]    ;
+;  Q1[1]    ; divi_mat[10] ; 8.545  ; 8.545  ; Rise       ; divi_mat[10]    ;
+;  Q1[2]    ; divi_mat[10] ; 10.851 ; 10.851 ; Rise       ; divi_mat[10]    ;
+; Q2[*]     ; divi_mat[10] ; 9.446  ; 9.446  ; Rise       ; divi_mat[10]    ;
+;  Q2[0]    ; divi_mat[10] ; 8.688  ; 8.688  ; Rise       ; divi_mat[10]    ;
+;  Q2[1]    ; divi_mat[10] ; 9.446  ; 9.446  ; Rise       ; divi_mat[10]    ;
+;  Q2[2]    ; divi_mat[10] ; 9.309  ; 9.309  ; Rise       ; divi_mat[10]    ;
+; Q3[*]     ; divi_mat[10] ; 8.899  ; 8.899  ; Rise       ; divi_mat[10]    ;
+;  Q3[0]    ; divi_mat[10] ; 8.217  ; 8.217  ; Rise       ; divi_mat[10]    ;
+;  Q3[1]    ; divi_mat[10] ; 8.372  ; 8.372  ; Rise       ; divi_mat[10]    ;
+;  Q3[2]    ; divi_mat[10] ; 8.334  ; 8.334  ; Rise       ; divi_mat[10]    ;
+;  Q3[3]    ; divi_mat[10] ; 8.865  ; 8.865  ; Rise       ; divi_mat[10]    ;
+;  Q3[4]    ; divi_mat[10] ; 8.899  ; 8.899  ; Rise       ; divi_mat[10]    ;
+;  Q3[5]    ; divi_mat[10] ; 8.349  ; 8.349  ; Rise       ; divi_mat[10]    ;
+;  Q3[6]    ; divi_mat[10] ; 8.229  ; 8.229  ; Rise       ; divi_mat[10]    ;
+;  Q3[7]    ; divi_mat[10] ; 8.241  ; 8.241  ; Rise       ; divi_mat[10]    ;
+;  Q3[8]    ; divi_mat[10] ; 8.371  ; 8.371  ; Rise       ; divi_mat[10]    ;
+;  Q3[9]    ; divi_mat[10] ; 8.239  ; 8.239  ; Rise       ; divi_mat[10]    ;
+;  Q3[10]   ; divi_mat[10] ; 8.311  ; 8.311  ; Rise       ; divi_mat[10]    ;
+; REN[*]    ; divi_mat[10] ; 12.869 ; 12.869 ; Rise       ; divi_mat[10]    ;
+;  REN[0]   ; divi_mat[10] ; 10.853 ; 10.853 ; Rise       ; divi_mat[10]    ;
+;  REN[1]   ; divi_mat[10] ; 12.372 ; 12.372 ; Rise       ; divi_mat[10]    ;
+;  REN[2]   ; divi_mat[10] ; 12.869 ; 12.869 ; Rise       ; divi_mat[10]    ;
+;  REN[3]   ; divi_mat[10] ; 12.397 ; 12.397 ; Rise       ; divi_mat[10]    ;
+;  REN[4]   ; divi_mat[10] ; 12.444 ; 12.444 ; Rise       ; divi_mat[10]    ;
+;  REN[5]   ; divi_mat[10] ; 12.426 ; 12.426 ; Rise       ; divi_mat[10]    ;
+;  REN[6]   ; divi_mat[10] ; 11.415 ; 11.415 ; Rise       ; divi_mat[10]    ;
+;  REN[7]   ; divi_mat[10] ; 11.351 ; 11.351 ; Rise       ; divi_mat[10]    ;
+; COL[*]    ; edo_pres.BP1 ; 11.063 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[0]   ; edo_pres.BP1 ; 10.854 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[1]   ; edo_pres.BP1 ; 11.058 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[2]   ; edo_pres.BP1 ; 9.723  ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[3]   ; edo_pres.BP1 ; 10.470 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[4]   ; edo_pres.BP1 ; 10.186 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[5]   ; edo_pres.BP1 ; 11.063 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[6]   ; edo_pres.BP1 ; 10.955 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[7]   ; edo_pres.BP1 ; 10.866 ;        ; Rise       ; edo_pres.BP1    ;
+; buzzer    ; edo_pres.BP1 ; 11.698 ; 11.698 ; Rise       ; edo_pres.BP1    ;
+; l_P1      ; edo_pres.BP1 ; 8.291  ;        ; Rise       ; edo_pres.BP1    ;
+; COL[*]    ; edo_pres.BP1 ;        ; 11.063 ; Fall       ; edo_pres.BP1    ;
+;  COL[0]   ; edo_pres.BP1 ;        ; 10.854 ; Fall       ; edo_pres.BP1    ;
+;  COL[1]   ; edo_pres.BP1 ;        ; 11.058 ; Fall       ; edo_pres.BP1    ;
+;  COL[2]   ; edo_pres.BP1 ;        ; 9.723  ; Fall       ; edo_pres.BP1    ;
+;  COL[3]   ; edo_pres.BP1 ;        ; 10.470 ; Fall       ; edo_pres.BP1    ;
+;  COL[4]   ; edo_pres.BP1 ;        ; 10.186 ; Fall       ; edo_pres.BP1    ;
+;  COL[5]   ; edo_pres.BP1 ;        ; 11.063 ; Fall       ; edo_pres.BP1    ;
+;  COL[6]   ; edo_pres.BP1 ;        ; 10.955 ; Fall       ; edo_pres.BP1    ;
+;  COL[7]   ; edo_pres.BP1 ;        ; 10.866 ; Fall       ; edo_pres.BP1    ;
+; l_P1      ; edo_pres.BP1 ;        ; 8.291  ; Fall       ; edo_pres.BP1    ;
+; buzzer    ; reloj        ; 13.368 ; 13.368 ; Rise       ; reloj           ;
+; BAJAR     ; sensor_P2    ; 9.232  ; 9.232  ; Fall       ; sensor_P2       ;
+; SUBIR     ; sensor_P2    ; 9.705  ; 9.705  ; Fall       ; sensor_P2       ;
++-----------+--------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-----------+--------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+--------------+--------+--------+------------+-----------------+
+; buzzer    ; divi[19]     ; 12.679 ; 12.679 ; Rise       ; divi[19]        ;
+; l_P1      ; divi[19]     ; 7.198  ;        ; Rise       ; divi[19]        ;
+; l_P2      ; divi[19]     ; 8.745  ;        ; Rise       ; divi[19]        ;
+; l_P3      ; divi[19]     ; 7.657  ;        ; Rise       ; divi[19]        ;
+; l_PB      ; divi[19]     ; 6.413  ;        ; Rise       ; divi[19]        ;
+; l_P1      ; divi[19]     ;        ; 7.198  ; Fall       ; divi[19]        ;
+; l_P2      ; divi[19]     ;        ; 8.745  ; Fall       ; divi[19]        ;
+; l_P3      ; divi[19]     ;        ; 7.657  ; Fall       ; divi[19]        ;
+; l_PB      ; divi[19]     ;        ; 6.413  ; Fall       ; divi[19]        ;
+; COL[*]    ; divi[23]     ; 13.207 ; 13.207 ; Rise       ; divi[23]        ;
+;  COL[0]   ; divi[23]     ; 14.158 ; 14.158 ; Rise       ; divi[23]        ;
+;  COL[1]   ; divi[23]     ; 14.238 ; 14.238 ; Rise       ; divi[23]        ;
+;  COL[2]   ; divi[23]     ; 13.741 ; 13.741 ; Rise       ; divi[23]        ;
+;  COL[3]   ; divi[23]     ; 13.789 ; 13.789 ; Rise       ; divi[23]        ;
+;  COL[4]   ; divi[23]     ; 13.207 ; 13.207 ; Rise       ; divi[23]        ;
+;  COL[5]   ; divi[23]     ; 14.269 ; 14.269 ; Rise       ; divi[23]        ;
+;  COL[6]   ; divi[23]     ; 15.060 ; 15.060 ; Rise       ; divi[23]        ;
+;  COL[7]   ; divi[23]     ; 13.918 ; 13.918 ; Rise       ; divi[23]        ;
+; l_P1      ; divi[23]     ; 10.998 ; 10.998 ; Rise       ; divi[23]        ;
+; l_P2      ; divi[23]     ; 12.855 ; 12.855 ; Rise       ; divi[23]        ;
+; l_P3      ; divi[23]     ; 12.237 ; 12.237 ; Rise       ; divi[23]        ;
+; l_PB      ; divi[23]     ; 11.897 ; 11.897 ; Rise       ; divi[23]        ;
+; COL[*]    ; divi_mat[10] ; 11.387 ; 11.387 ; Rise       ; divi_mat[10]    ;
+;  COL[0]   ; divi_mat[10] ; 13.813 ; 13.813 ; Rise       ; divi_mat[10]    ;
+;  COL[1]   ; divi_mat[10] ; 12.461 ; 12.461 ; Rise       ; divi_mat[10]    ;
+;  COL[2]   ; divi_mat[10] ; 12.465 ; 12.465 ; Rise       ; divi_mat[10]    ;
+;  COL[3]   ; divi_mat[10] ; 14.264 ; 14.264 ; Rise       ; divi_mat[10]    ;
+;  COL[4]   ; divi_mat[10] ; 11.387 ; 11.387 ; Rise       ; divi_mat[10]    ;
+;  COL[5]   ; divi_mat[10] ; 12.458 ; 12.458 ; Rise       ; divi_mat[10]    ;
+;  COL[6]   ; divi_mat[10] ; 13.916 ; 13.916 ; Rise       ; divi_mat[10]    ;
+;  COL[7]   ; divi_mat[10] ; 14.070 ; 14.070 ; Rise       ; divi_mat[10]    ;
+; Q1[*]     ; divi_mat[10] ; 8.545  ; 8.545  ; Rise       ; divi_mat[10]    ;
+;  Q1[0]    ; divi_mat[10] ; 9.087  ; 9.087  ; Rise       ; divi_mat[10]    ;
+;  Q1[1]    ; divi_mat[10] ; 8.545  ; 8.545  ; Rise       ; divi_mat[10]    ;
+;  Q1[2]    ; divi_mat[10] ; 10.851 ; 10.851 ; Rise       ; divi_mat[10]    ;
+; Q2[*]     ; divi_mat[10] ; 8.688  ; 8.688  ; Rise       ; divi_mat[10]    ;
+;  Q2[0]    ; divi_mat[10] ; 8.688  ; 8.688  ; Rise       ; divi_mat[10]    ;
+;  Q2[1]    ; divi_mat[10] ; 9.446  ; 9.446  ; Rise       ; divi_mat[10]    ;
+;  Q2[2]    ; divi_mat[10] ; 9.309  ; 9.309  ; Rise       ; divi_mat[10]    ;
+; Q3[*]     ; divi_mat[10] ; 8.217  ; 8.217  ; Rise       ; divi_mat[10]    ;
+;  Q3[0]    ; divi_mat[10] ; 8.217  ; 8.217  ; Rise       ; divi_mat[10]    ;
+;  Q3[1]    ; divi_mat[10] ; 8.372  ; 8.372  ; Rise       ; divi_mat[10]    ;
+;  Q3[2]    ; divi_mat[10] ; 8.334  ; 8.334  ; Rise       ; divi_mat[10]    ;
+;  Q3[3]    ; divi_mat[10] ; 8.865  ; 8.865  ; Rise       ; divi_mat[10]    ;
+;  Q3[4]    ; divi_mat[10] ; 8.899  ; 8.899  ; Rise       ; divi_mat[10]    ;
+;  Q3[5]    ; divi_mat[10] ; 8.349  ; 8.349  ; Rise       ; divi_mat[10]    ;
+;  Q3[6]    ; divi_mat[10] ; 8.229  ; 8.229  ; Rise       ; divi_mat[10]    ;
+;  Q3[7]    ; divi_mat[10] ; 8.241  ; 8.241  ; Rise       ; divi_mat[10]    ;
+;  Q3[8]    ; divi_mat[10] ; 8.371  ; 8.371  ; Rise       ; divi_mat[10]    ;
+;  Q3[9]    ; divi_mat[10] ; 8.239  ; 8.239  ; Rise       ; divi_mat[10]    ;
+;  Q3[10]   ; divi_mat[10] ; 8.311  ; 8.311  ; Rise       ; divi_mat[10]    ;
+; REN[*]    ; divi_mat[10] ; 9.754  ; 9.754  ; Rise       ; divi_mat[10]    ;
+;  REN[0]   ; divi_mat[10] ; 10.409 ; 10.409 ; Rise       ; divi_mat[10]    ;
+;  REN[1]   ; divi_mat[10] ; 10.911 ; 10.911 ; Rise       ; divi_mat[10]    ;
+;  REN[2]   ; divi_mat[10] ; 11.392 ; 11.392 ; Rise       ; divi_mat[10]    ;
+;  REN[3]   ; divi_mat[10] ; 10.935 ; 10.935 ; Rise       ; divi_mat[10]    ;
+;  REN[4]   ; divi_mat[10] ; 10.979 ; 10.979 ; Rise       ; divi_mat[10]    ;
+;  REN[5]   ; divi_mat[10] ; 10.948 ; 10.948 ; Rise       ; divi_mat[10]    ;
+;  REN[6]   ; divi_mat[10] ; 9.803  ; 9.803  ; Rise       ; divi_mat[10]    ;
+;  REN[7]   ; divi_mat[10] ; 9.754  ; 9.754  ; Rise       ; divi_mat[10]    ;
+; COL[*]    ; edo_pres.BP1 ; 8.645  ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[0]   ; edo_pres.BP1 ; 10.395 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[1]   ; edo_pres.BP1 ; 10.007 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[2]   ; edo_pres.BP1 ; 9.179  ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[3]   ; edo_pres.BP1 ; 10.470 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[4]   ; edo_pres.BP1 ; 8.645  ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[5]   ; edo_pres.BP1 ; 10.016 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[6]   ; edo_pres.BP1 ; 10.498 ;        ; Rise       ; edo_pres.BP1    ;
+;  COL[7]   ; edo_pres.BP1 ; 10.866 ;        ; Rise       ; edo_pres.BP1    ;
+; buzzer    ; edo_pres.BP1 ; 11.698 ; 11.698 ; Rise       ; edo_pres.BP1    ;
+; l_P1      ; edo_pres.BP1 ; 8.291  ;        ; Rise       ; edo_pres.BP1    ;
+; COL[*]    ; edo_pres.BP1 ;        ; 8.645  ; Fall       ; edo_pres.BP1    ;
+;  COL[0]   ; edo_pres.BP1 ;        ; 10.395 ; Fall       ; edo_pres.BP1    ;
+;  COL[1]   ; edo_pres.BP1 ;        ; 10.007 ; Fall       ; edo_pres.BP1    ;
+;  COL[2]   ; edo_pres.BP1 ;        ; 9.179  ; Fall       ; edo_pres.BP1    ;
+;  COL[3]   ; edo_pres.BP1 ;        ; 10.470 ; Fall       ; edo_pres.BP1    ;
+;  COL[4]   ; edo_pres.BP1 ;        ; 8.645  ; Fall       ; edo_pres.BP1    ;
+;  COL[5]   ; edo_pres.BP1 ;        ; 10.016 ; Fall       ; edo_pres.BP1    ;
+;  COL[6]   ; edo_pres.BP1 ;        ; 10.498 ; Fall       ; edo_pres.BP1    ;
+;  COL[7]   ; edo_pres.BP1 ;        ; 10.866 ; Fall       ; edo_pres.BP1    ;
+; l_P1      ; edo_pres.BP1 ;        ; 8.291  ; Fall       ; edo_pres.BP1    ;
+; buzzer    ; reloj        ; 10.456 ; 10.456 ; Rise       ; reloj           ;
+; BAJAR     ; sensor_P2    ; 9.232  ; 9.232  ; Fall       ; sensor_P2       ;
+; SUBIR     ; sensor_P2    ; 9.705  ; 9.705  ; Fall       ; sensor_P2       ;
++-----------+--------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Transfers                                                         ;
++--------------+--------------+----------+----------+----------+----------+
+; From Clock   ; To Clock     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------+--------------+----------+----------+----------+----------+
+; divi[19]     ; divi[19]     ; 6        ; 0        ; 0        ; 0        ;
+; divi[23]     ; divi[23]     ; 35       ; 0        ; 0        ; 0        ;
+; edo_pres.BP1 ; divi[23]     ; 2        ; 2        ; 0        ; 0        ;
+; sensor_P2    ; divi[23]     ; 6        ; 6        ; 0        ; 0        ;
+; divi_mat[10] ; divi_mat[10] ; 350      ; 0        ; 0        ; 0        ;
+; divi[23]     ; edo_pres.BP1 ; 4        ; 0        ; 0        ; 0        ;
+; divi[19]     ; reloj        ; 9        ; 9        ; 0        ; 0        ;
+; divi[23]     ; reloj        ; 1        ; 1        ; 0        ; 0        ;
+; divi_mat[10] ; reloj        ; 1        ; 1        ; 0        ; 0        ;
+; reloj        ; reloj        ; 520      ; 0        ; 0        ; 0        ;
+; divi[23]     ; sensor_P2    ; 0        ; 0        ; 5        ; 0        ;
+; edo_pres.BP1 ; sensor_P2    ; 0        ; 0        ; 1        ; 1        ;
++--------------+--------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------+
+; Hold Transfers                                                          ;
++--------------+--------------+----------+----------+----------+----------+
+; From Clock   ; To Clock     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------+--------------+----------+----------+----------+----------+
+; divi[19]     ; divi[19]     ; 6        ; 0        ; 0        ; 0        ;
+; divi[23]     ; divi[23]     ; 35       ; 0        ; 0        ; 0        ;
+; edo_pres.BP1 ; divi[23]     ; 2        ; 2        ; 0        ; 0        ;
+; sensor_P2    ; divi[23]     ; 6        ; 6        ; 0        ; 0        ;
+; divi_mat[10] ; divi_mat[10] ; 350      ; 0        ; 0        ; 0        ;
+; divi[23]     ; edo_pres.BP1 ; 4        ; 0        ; 0        ; 0        ;
+; divi[19]     ; reloj        ; 9        ; 9        ; 0        ; 0        ;
+; divi[23]     ; reloj        ; 1        ; 1        ; 0        ; 0        ;
+; divi_mat[10] ; reloj        ; 1        ; 1        ; 0        ; 0        ;
+; reloj        ; reloj        ; 520      ; 0        ; 0        ; 0        ;
+; divi[23]     ; sensor_P2    ; 0        ; 0        ; 5        ; 0        ;
+; edo_pres.BP1 ; sensor_P2    ; 0        ; 0        ; 1        ; 1        ;
++--------------+--------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 44    ; 44   ;
+; Unconstrained Output Ports      ; 40    ; 40   ;
+; Unconstrained Output Port Paths ; 205   ; 205  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 22 09:38:35 2018
+Info: Command: quartus_sta DSD_elevador5 -c DSD_elevador5
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 3 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DSD_elevador5.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name reloj reloj
+    Info (332105): create_clock -period 1.000 -name divi[19] divi[19]
+    Info (332105): create_clock -period 1.000 -name sensor_P2 sensor_P2
+    Info (332105): create_clock -period 1.000 -name divi[23] divi[23]
+    Info (332105): create_clock -period 1.000 -name divi_mat[10] divi_mat[10]
+    Info (332105): create_clock -period 1.000 -name edo_pres.BP1 edo_pres.BP1
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.135
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.135       -92.304 divi_mat[10] 
+    Info (332119):    -5.654      -109.950 reloj 
+    Info (332119):    -5.131        -8.764 sensor_P2 
+    Info (332119):    -3.889       -43.112 divi[23] 
+    Info (332119):    -3.825        -3.825 edo_pres.BP1 
+    Info (332119):    -1.717        -4.690 divi[19] 
+Info (332146): Worst-case hold slack is -2.947
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.947        -5.978 divi[23] 
+    Info (332119):    -2.891        -2.891 sensor_P2 
+    Info (332119):    -2.194        -7.661 reloj 
+    Info (332119):     1.650         0.000 divi_mat[10] 
+    Info (332119):     1.704         0.000 divi[19] 
+    Info (332119):     2.130         0.000 edo_pres.BP1 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 reloj 
+    Info (332119):    -2.289        -2.289 sensor_P2 
+    Info (332119):     0.234         0.000 divi[19] 
+    Info (332119):     0.234         0.000 divi[23] 
+    Info (332119):     0.234         0.000 divi_mat[10] 
+    Info (332119):     0.500         0.000 edo_pres.BP1 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4541 megabytes
+    Info: Processing ended: Thu Nov 22 09:38:40 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
+
+

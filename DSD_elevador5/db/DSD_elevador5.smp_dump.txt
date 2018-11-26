@@ -1,0 +1,18 @@
+
+State Machine - |ES201917EL|edo_pres
+Name edo_pres.DP3 edo_pres.SP3 edo_pres.P3 edo_pres.DP2 edo_pres.BP2 edo_pres.SP2 edo_pres.P2 edo_pres.DP1 edo_pres.BP1 edo_pres.SP1 edo_pres.P1 edo_pres.DPB edo_pres.BPB edo_pres.PB edo_pres.DETECTA_PISO 
+edo_pres.DETECTA_PISO 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+edo_pres.PB 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+edo_pres.BPB 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+edo_pres.DPB 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+edo_pres.P1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+edo_pres.SP1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+edo_pres.BP1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+edo_pres.DP1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+edo_pres.P2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+edo_pres.SP2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+edo_pres.BP2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+edo_pres.DP2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+edo_pres.P3 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+edo_pres.SP3 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+edo_pres.DP3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

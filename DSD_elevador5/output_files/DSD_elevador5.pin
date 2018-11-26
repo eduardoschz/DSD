@@ -1,0 +1,164 @@
+ -- Copyright (C) 1991-2013 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (2.5V/3.3V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		3.3V
+ --					Bank 2:		3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+CHIP  "DSD_elevador5"  ASSIGNED TO AN: EPM240T100C5
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND*                         : 1         :        :                   :         : 2         :                
+GND*                         : 2         :        :                   :         : 1         :                
+GND*                         : 3         :        :                   :         : 1         :                
+GND*                         : 4         :        :                   :         : 1         :                
+GND*                         : 5         :        :                   :         : 1         :                
+GND*                         : 6         :        :                   :         : 1         :                
+GND*                         : 7         :        :                   :         : 1         :                
+GND*                         : 8         :        :                   :         : 1         :                
+VCCIO1                       : 9         : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 10        : gnd    :                   :         :           :                
+GNDINT                       : 11        : gnd    :                   :         :           :                
+GND*                         : 12        :        :                   :         : 1         :                
+VCCINT                       : 13        : power  :                   : 2.5V/3.3V :           :                
+Q2[1]                        : 14        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : 15        :        :                   :         : 1         :                
+GND*                         : 16        :        :                   :         : 1         :                
+GND*                         : 17        :        :                   :         : 1         :                
+boton_P3                     : 18        : input  : 3.3-V LVTTL       :         : 1         : Y              
+boton_P2                     : 19        : input  : 3.3-V LVTTL       :         : 1         : Y              
+boton_P1                     : 20        : input  : 3.3-V LVTTL       :         : 1         : Y              
+boton_PB                     : 21        : input  : 3.3-V LVTTL       :         : 1         : Y              
+TMS                          : 22        : input  :                   :         : 1         :                
+TDI                          : 23        : input  :                   :         : 1         :                
+TCK                          : 24        : input  :                   :         : 1         :                
+TDO                          : 25        : output :                   :         : 1         :                
+COL[7]                       : 26        : output : 3.3-V LVTTL       :         : 1         : Y              
+COL[6]                       : 27        : output : 3.3-V LVTTL       :         : 1         : Y              
+COL[5]                       : 28        : output : 3.3-V LVTTL       :         : 1         : Y              
+COL[4]                       : 29        : output : 3.3-V LVTTL       :         : 1         : Y              
+COL[3]                       : 30        : output : 3.3-V LVTTL       :         : 1         : Y              
+VCCIO1                       : 31        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 32        : gnd    :                   :         :           :                
+COL[2]                       : 33        : output : 3.3-V LVTTL       :         : 1         : Y              
+COL[1]                       : 34        : output : 3.3-V LVTTL       :         : 1         : Y              
+COL[0]                       : 35        : output : 3.3-V LVTTL       :         : 1         : Y              
+buzzer                       : 36        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 37        :        :                   :         : 1         :                
+GND*                         : 38        :        :                   :         : 1         :                
+GND*                         : 39        :        :                   :         : 1         :                
+BAJAR                        : 40        : output : 3.3-V LVTTL       :         : 1         : Y              
+SUBIR                        : 41        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 42        :        :                   :         : 1         :                
+GND*                         : 43        :        :                   :         : 1         :                
+GND*                         : 44        :        :                   :         : 1         :                
+VCCIO1                       : 45        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 46        : gnd    :                   :         :           :                
+GND*                         : 47        :        :                   :         : 1         :                
+GND*                         : 48        :        :                   :         : 1         :                
+GND*                         : 49        :        :                   :         : 1         :                
+GND*                         : 50        :        :                   :         : 1         :                
+GND*                         : 51        :        :                   :         : 1         :                
+Q2[2]                        : 52        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q1[2]                        : 53        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+sensor_PB                    : 54        : input  : 3.3-V LVTTL       :         : 2         : Y              
+sensor_P1                    : 55        : input  : 3.3-V LVTTL       :         : 2         : Y              
+sensor_P2                    : 56        : input  : 3.3-V LVTTL       :         : 2         : Y              
+sensor_P3                    : 57        : input  : 3.3-V LVTTL       :         : 2         : Y              
+Q1[0]                        : 58        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+VCCIO2                       : 59        : power  :                   : 3.3V    : 2         :                
+GNDIO                        : 60        : gnd    :                   :         :           :                
+Q2[0]                        : 61        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q1[1]                        : 62        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+VCCINT                       : 63        : power  :                   : 2.5V/3.3V :           :                
+reloj                        : 64        : input  : 3.3-V LVTTL       :         : 2         : Y              
+GNDINT                       : 65        : gnd    :                   :         :           :                
+REN[0]                       : 66        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[1]                       : 67        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[2]                       : 68        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[3]                       : 69        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[4]                       : 70        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[5]                       : 71        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[6]                       : 72        : output : 3.3-V LVTTL       :         : 2         : Y              
+REN[7]                       : 73        : output : 3.3-V LVTTL       :         : 2         : Y              
+Q3[10]                       : 74        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[8]                        : 75        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[3]                        : 76        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 77        :        :                   :         : 2         :                
+Q3[5]                        : 78        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+GNDIO                        : 79        : gnd    :                   :         :           :                
+VCCIO2                       : 80        : power  :                   : 3.3V    : 2         :                
+Q3[6]                        : 81        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[9]                        : 82        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[4]                        : 83        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[7]                        : 84        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[0]                        : 85        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[2]                        : 86        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+Q3[1]                        : 87        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+l_PB                         : 88        : output : 3.3-V LVTTL       :         : 2         : Y              
+l_P1                         : 89        : output : 3.3-V LVTTL       :         : 2         : Y              
+l_P3                         : 90        : output : 3.3-V LVTTL       :         : 2         : Y              
+l_P2                         : 91        : output : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 92        :        :                   :         : 2         :                
+GNDIO                        : 93        : gnd    :                   :         :           :                
+VCCIO2                       : 94        : power  :                   : 3.3V    : 2         :                
+GND*                         : 95        :        :                   :         : 2         :                
+GND*                         : 96        :        :                   :         : 2         :                
+GND*                         : 97        :        :                   :         : 2         :                
+GND*                         : 98        :        :                   :         : 2         :                
+GND*                         : 99        :        :                   :         : 2         :                
+GND*                         : 100       :        :                   :         : 2         :                

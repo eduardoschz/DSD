@@ -1,0 +1,42 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_signed.all;
+
+entity lcd is
+ 
+ port(ck, rst : in std_logic;
+		Q : inout std_logic_vector (3 downto 0);
+		rs : out std_logic;
+		rw : out std_logic;
+		D : out std_logic_vector (7 downto 0);
+ );
+ 
+ end lcd;
+ 
+ architecture eduardo of lcd is
+contador:process(ck,rst)
+			begin
+			
+					if(ck'event and ck = '1')then
+					Q<=Q + 1;
+						if(Q = "0110" or rst = '1') then
+							Q <= "0000";
+							end if;
+					end if;
+			end process contador;
+			
+			table:process(Q) begin
+			case Q is								
+				when "0000" => D <= "00111000", rs<='0', rw<='0';
+				when "0001" => D <= "00000001", rs<='0', rw<='0';
+				when "0010" => D <= "00000110", rs<='0', rw<='0';
+				when "0011" => D <= "00001110", rs<='0', rw<='0';
+				when "0100" => D <= "10000000", rs<='0', rw<='0'; 
+				when "0101" => D <= "01010000", rs<='1', rw<='0';
+				when "0110" => D <= "01010010", rs<='1', rw<='0';
+				when others => D <= "00000000";
+				end case;
+			end process table;
+			
+end eduardo;

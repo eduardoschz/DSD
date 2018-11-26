@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\josee\OneDrive\Documentos\Facultad\2019-1\Diseño de Sistemas Digitales\Teo\DSD_matriz\simulation\qsim
+vmatrix
+Z1 !s100 djiYS?T4YX=iA`=<P6nU03
+Z2 I6e8a`9Q6SPg_<6Q`CS<923
+Z3 VDNDSPO8BJ=TWzeT4JVi@I2
+Z4 dC:\Users\josee\OneDrive\Documentos\Facultad\2019-1\Diseño de Sistemas Digitales\Teo\DSD_matriz\simulation\qsim
+Z5 w1538536515
+Z6 8DSD_matriz.vo
+Z7 FDSD_matriz.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|DSD_matriz.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1538536516.540000
+Z12 !s107 DSD_matriz.vo|
+!s101 -O0
+vmatrix_vlg_check_tst
+!i10b 1
+!s100 Oa`z3TFNQY_g<hz4?`TT`0
+I0EV=>SFNnl5Ic^Cmg4DoE3
+Z13 V;hj[67NCLYFk4^kiZZ5ih3
+R4
+Z14 w1538536513
+Z15 8DSD_matriz.vt
+Z16 FDSD_matriz.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z17 !s108 1538536516.805000
+Z18 !s107 DSD_matriz.vt|
+Z19 !s90 -work|work|DSD_matriz.vt|
+!s101 -O0
+R10
+vmatrix_vlg_sample_tst
+!i10b 1
+Z20 !s100 J3mISW?_6k0IiU<iDh9HX0
+Z21 IegL<kzP;ae:z^X:hODmh20
+Z22 V=4;E3T0>dc8XYUMkWSo`e2
+R4
+R14
+R15
+R16
+L0 29
+R8
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R10
+vmatrix_vlg_vec_tst
+!i10b 1
+!s100 K=^i:JJ[neRP8Y`T7@l8V1
+IU5_Rh`XZ5]j;4aU`WHJzH3
+Z23 VOTg13MMbdUoNnDo5?5Y;B3
+R4
+R14
+R15
+R16
+L0 682
+R8
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R10

@@ -1,0 +1,448 @@
+Analysis & Synthesis report for DSD_elevador5
+Thu Nov 22 09:38:26 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ES201917EL|edo_pres
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Nov 22 09:38:26 2018           ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name               ; DSD_elevador5                                   ;
+; Top-level Entity Name       ; ES201917EL                                      ;
+; Family                      ; MAX II                                          ;
+; Total logic elements        ; 232                                             ;
+; Total pins                  ; 49                                              ;
+; Total virtual pins          ; 0                                               ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                   ;
++-----------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                      ; ES201917EL         ; DSD_elevador5      ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+; ES201917EL.vhd                   ; yes             ; User VHDL File  ; C:/Users/josee/Documents/Facultad/2019-1/Diseño de Sistemas Digitales/Teo/DSD_elevador5/ES201917EL.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Total logic elements                        ; 232        ;
+;     -- Combinational with no register       ; 172        ;
+;     -- Register only                        ; 0          ;
+;     -- Combinational with a register        ; 60         ;
+;                                             ;            ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 91         ;
+;     -- 3 input functions                    ; 49         ;
+;     -- 2 input functions                    ; 88         ;
+;     -- 1 input functions                    ; 4          ;
+;     -- 0 input functions                    ; 0          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 162        ;
+;     -- arithmetic mode                      ; 70         ;
+;     -- qfbk mode                            ; 0          ;
+;     -- register cascade mode                ; 0          ;
+;     -- synchronous clear/load mode          ; 11         ;
+;     -- asynchronous clear/load mode         ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 60         ;
+; Total logic cells in carry chains           ; 75         ;
+; I/O pins                                    ; 49         ;
+; Maximum fan-out node                        ; Q2[1]~reg0 ;
+; Maximum fan-out                             ; 42         ;
+; Total fan-out                               ; 802        ;
+; Average fan-out                             ; 2.85       ;
++---------------------------------------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |ES201917EL                ; 232 (232)   ; 60           ; 0          ; 49   ; 0            ; 172 (172)    ; 0 (0)             ; 60 (60)          ; 75 (75)         ; 0 (0)      ; |ES201917EL         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ES201917EL|edo_pres                                                                                                                                                                                                                        ;
++-----------------------+--------------+--------------+-------------+--------------+--------------+--------------+-------------+--------------+--------------+--------------+-------------+--------------+--------------+-------------+-----------------------+
+; Name                  ; edo_pres.DP3 ; edo_pres.SP3 ; edo_pres.P3 ; edo_pres.DP2 ; edo_pres.BP2 ; edo_pres.SP2 ; edo_pres.P2 ; edo_pres.DP1 ; edo_pres.BP1 ; edo_pres.SP1 ; edo_pres.P1 ; edo_pres.DPB ; edo_pres.BPB ; edo_pres.PB ; edo_pres.DETECTA_PISO ;
++-----------------------+--------------+--------------+-------------+--------------+--------------+--------------+-------------+--------------+--------------+--------------+-------------+--------------+--------------+-------------+-----------------------+
+; edo_pres.DETECTA_PISO ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 0                     ;
+; edo_pres.PB           ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 1           ; 1                     ;
+; edo_pres.BPB          ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 1            ; 0           ; 1                     ;
+; edo_pres.DPB          ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 1            ; 0            ; 0           ; 1                     ;
+; edo_pres.P1           ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 1           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.SP1          ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 1            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.BP1          ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 1            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.DP1          ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 1            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.P2           ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 1           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.SP2          ; 0            ; 0            ; 0           ; 0            ; 0            ; 1            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.BP2          ; 0            ; 0            ; 0           ; 0            ; 1            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.DP2          ; 0            ; 0            ; 0           ; 1            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.P3           ; 0            ; 0            ; 1           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.SP3          ; 0            ; 1            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
+; edo_pres.DP3          ; 1            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0            ; 0           ; 0            ; 0            ; 0           ; 1                     ;
++-----------------------+--------------+--------------+-------------+--------------+--------------+--------------+-------------+--------------+--------------+--------------+-------------+--------------+--------------+-------------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; SUBIR$latch                                        ; Selector6           ; yes                    ;
+; BAJAR$latch                                        ; Selector6           ; yes                    ;
+; B_ena                                              ; WideOr1             ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; divi_mat[0]                            ; Merged with D[0]   ;
+; C[0]                                   ; Merged with D[0]   ;
+; A[0]                                   ; Merged with D[0]   ;
+; B[0]                                   ; Merged with D[0]   ;
+; divi[0]                                ; Merged with D[0]   ;
+; divi[1]                                ; Merged with D[1]   ;
+; A[1]                                   ; Merged with D[1]   ;
+; B[1]                                   ; Merged with D[1]   ;
+; C[1]                                   ; Merged with D[1]   ;
+; divi_mat[1]                            ; Merged with D[1]   ;
+; B[2]                                   ; Merged with D[2]   ;
+; divi[2]                                ; Merged with D[2]   ;
+; A[2]                                   ; Merged with D[2]   ;
+; divi_mat[2]                            ; Merged with D[2]   ;
+; C[2]                                   ; Merged with D[2]   ;
+; divi[3]                                ; Merged with D[3]   ;
+; A[3]                                   ; Merged with D[3]   ;
+; divi_mat[3]                            ; Merged with D[3]   ;
+; B[3]                                   ; Merged with D[3]   ;
+; C[3]                                   ; Merged with D[3]   ;
+; divi[4]                                ; Merged with D[4]   ;
+; B[4]                                   ; Merged with D[4]   ;
+; A[4]                                   ; Merged with D[4]   ;
+; divi_mat[4]                            ; Merged with D[4]   ;
+; C[4]                                   ; Merged with D[4]   ;
+; divi_mat[5]                            ; Merged with D[5]   ;
+; C[5]                                   ; Merged with D[5]   ;
+; A[5]                                   ; Merged with D[5]   ;
+; B[5]                                   ; Merged with D[5]   ;
+; divi[5]                                ; Merged with D[5]   ;
+; divi[6]                                ; Merged with D[6]   ;
+; A[6]                                   ; Merged with D[6]   ;
+; C[6]                                   ; Merged with D[6]   ;
+; divi_mat[6]                            ; Merged with D[6]   ;
+; B[6]                                   ; Merged with D[6]   ;
+; divi_mat[7]                            ; Merged with D[7]   ;
+; divi[7]                                ; Merged with D[7]   ;
+; A[7]                                   ; Merged with D[7]   ;
+; C[7]                                   ; Merged with D[7]   ;
+; B[7]                                   ; Merged with D[7]   ;
+; divi[8]                                ; Merged with D[8]   ;
+; A[8]                                   ; Merged with D[8]   ;
+; C[8]                                   ; Merged with D[8]   ;
+; divi_mat[8]                            ; Merged with D[8]   ;
+; B[8]                                   ; Merged with D[8]   ;
+; divi_mat[9]                            ; Merged with D[9]   ;
+; divi[9]                                ; Merged with D[9]   ;
+; A[9]                                   ; Merged with D[9]   ;
+; C[9]                                   ; Merged with D[9]   ;
+; B[9]                                   ; Merged with D[9]   ;
+; divi[10]                               ; Merged with D[10]  ;
+; B[10]                                  ; Merged with D[10]  ;
+; A[10]                                  ; Merged with D[10]  ;
+; C[10]                                  ; Merged with D[10]  ;
+; B[11]                                  ; Merged with D[11]  ;
+; divi[11]                               ; Merged with D[11]  ;
+; C[11]                                  ; Merged with D[11]  ;
+; A[11]                                  ; Merged with D[11]  ;
+; divi[12]                               ; Merged with D[12]  ;
+; B[12]                                  ; Merged with D[12]  ;
+; A[12]                                  ; Merged with D[12]  ;
+; C[12]                                  ; Merged with D[12]  ;
+; B[13]                                  ; Merged with D[13]  ;
+; A[13]                                  ; Merged with D[13]  ;
+; divi[13]                               ; Merged with D[13]  ;
+; C[13]                                  ; Merged with D[13]  ;
+; B[14]                                  ; Merged with D[14]  ;
+; C[14]                                  ; Merged with D[14]  ;
+; divi[14]                               ; Merged with D[14]  ;
+; C[15]                                  ; Merged with D[15]  ;
+; divi[15]                               ; Merged with D[15]  ;
+; divi[16]                               ; Merged with C[16]  ;
+; divi_mat[11..15]                       ; Lost fanout        ;
+; Total Number of Removed Registers = 77 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 60    ;
+; Number of registers using Synchronous Clear  ; 11    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |ES201917EL|Q2[2]~reg0     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |ES201917EL|Q1[0]~reg0     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |ES201917EL|Mux26          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ES201917EL|Mux3           ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ES201917EL|Mux25          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 22 09:38:22 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSD_elevador5 -c DSD_elevador5
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file es201917el.vhd
+    Info (12022): Found design unit 1: ES201917EL-comportamiento
+    Info (12023): Found entity 1: ES201917EL
+Info (12127): Elaborating entity "ES201917EL" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(105): signal "cont_buz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(107): signal "a_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(109): signal "b_14" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(111): signal "d_15" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(113): signal "c_16" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(127): signal "edo_pres" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(135): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(136): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(137): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(138): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(178): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(226): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(242): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(270): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(290): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(304): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ES201917EL.vhd(355): signal "clk_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ES201917EL.vhd(125): inferring latch(es) for signal or variable "B_ena", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ES201917EL.vhd(125): inferring latch(es) for signal or variable "SUBIR", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ES201917EL.vhd(125): inferring latch(es) for signal or variable "BAJAR", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "BAJAR" at ES201917EL.vhd(125)
+Info (10041): Inferred latch for "SUBIR" at ES201917EL.vhd(125)
+Info (10041): Inferred latch for "B_ena" at ES201917EL.vhd(125)
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q1[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q1[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q1[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q2[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q2[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q2[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[3]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[4]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[5]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[6]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[7]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[9]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "Q3[10]" and its non-tri-state driver.
+Info (13060): One or more bidirs are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q1[0]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q1[1]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q1[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q2[0]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q2[1]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q2[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[0]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[1]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[3]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[4]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[5]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[6]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[7]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[8]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[9]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "Q3[10]" is moved to its source
+Warning (13012): Latch SUBIR$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal edo_pres.SP2
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "Q1[0]~synth"
+    Warning (13010): Node "Q1[1]~synth"
+    Warning (13010): Node "Q1[2]~synth"
+    Warning (13010): Node "Q2[0]~synth"
+    Warning (13010): Node "Q2[1]~synth"
+    Warning (13010): Node "Q2[2]~synth"
+    Warning (13010): Node "Q3[0]~synth"
+    Warning (13010): Node "Q3[1]~synth"
+    Warning (13010): Node "Q3[2]~synth"
+    Warning (13010): Node "Q3[3]~synth"
+    Warning (13010): Node "Q3[4]~synth"
+    Warning (13010): Node "Q3[5]~synth"
+    Warning (13010): Node "Q3[6]~synth"
+    Warning (13010): Node "Q3[7]~synth"
+    Warning (13010): Node "Q3[8]~synth"
+    Warning (13010): Node "Q3[9]~synth"
+    Warning (13010): Node "Q3[10]~synth"
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21060): Implemented 17 bidirectional pins
+    Info (21061): Implemented 232 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 4630 megabytes
+    Info: Processing ended: Thu Nov 22 09:38:26 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+

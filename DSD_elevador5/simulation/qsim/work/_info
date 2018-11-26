@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\josee\OneDrive\Documentos\Facultad\2019-1\Diseño de Sistemas Digitales\Teo\DSD_elevador5\simulation\qsim
+vES201917EL
+Z1 !s100 a_gjgk9:Wb9AlD>o;Q68O2
+Z2 IbCj]<bhOS0?ETdf=M9dCm3
+Z3 VMKImnzLPlebf4nl6<F>ZX2
+Z4 dC:\Users\josee\OneDrive\Documentos\Facultad\2019-1\Diseño de Sistemas Digitales\Teo\DSD_elevador5\simulation\qsim
+Z5 w1542396809
+Z6 8DSD_elevador5.vo
+Z7 FDSD_elevador5.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|DSD_elevador5.vo|
+Z10 o-work work -O0
+Z11 n@e@s201917@e@l
+!i10b 1
+!s85 0
+Z12 !s108 1542396811.133000
+Z13 !s107 DSD_elevador5.vo|
+!s101 -O0
+vES201917EL_vlg_check_tst
+!i10b 1
+Z14 !s100 U3J]JeoeB4T>gLoS^:Rz00
+Z15 IZ>J`4`<b7:G:Z[oRz`K332
+Z16 V@3<^[3DnWb7APV4`EhC7n0
+R4
+Z17 w1542396808
+Z18 8DSD_elevador5.vt
+Z19 FDSD_elevador5.vt
+L0 73
+R8
+r1
+!s85 0
+31
+Z20 !s108 1542396811.410000
+Z21 !s107 DSD_elevador5.vt|
+Z22 !s90 -work|work|DSD_elevador5.vt|
+!s101 -O0
+R10
+Z23 n@e@s201917@e@l_vlg_check_tst
+vES201917EL_vlg_sample_tst
+!i10b 1
+Z24 !s100 ]Jo]z@`J01HPKA:X`BH<c2
+Z25 I6m?ClNPWSL^I:e@Xk<NHS0
+Z26 V957<aih2dK9Ckf;bSXaGX0
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@e@s201917@e@l_vlg_sample_tst
+vES201917EL_vlg_vec_tst
+!i10b 1
+!s100 HaC4[4NMVQjc5Y>fZ5kaU1
+I;I:4Xn>Rc3Q9``adD`N[N1
+Z28 VD0im1^5bgn>z3976b4Ikd0
+R4
+R17
+R18
+R19
+Z29 L0 302
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@e@s201917@e@l_vlg_vec_tst

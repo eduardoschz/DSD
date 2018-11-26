@@ -1,0 +1,196 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity ES201917EL is
+	port (
+		reloj: in std_logic;
+		boton_PB, boton_P1, boton_P2, boton_P3, sensor_PB, sensor_P1, sensor_P2, sensor_P3, SUBIR, BAJAR:  in std_logic;
+--		Q: out std_logic_vector (1 downto 0);
+--		SEG : out std_logic_vector (6 downto 0);
+		B: inout std_logic
+	);
+end ES201917EL ;
+
+architecture comportamiento of ES201917EL is
+	type estados is (PB, BPB, DPB, P1, SP1, BP1, DP1, P2, SP2, BP2, DP2, P3, SP3, DP3);
+	signal edo_pres, edo_fut: estados;
+--	signal divi : std_logic_vector(24 downto 0):="0000000000000000000000000";
+--	signal div_b: std_logic_vector(17 downto 0):="000000000000000000";
+	signal divi : std_logic_vector(2 downto 0):="000";
+	signal div_b: std_logic_vector(1 downto 0):="00";
+	signal clk, clk_b: std_logic;
+	signal PP, PF: std_logic_vector (3 downto 0);
+begin
+
+-------------------------------------------------------
+-- Proceso de divisor del reloj controlador y buzzer --
+-------------------------------------------------------
+ 		
+		divisor: process (reloj) 
+		begin
+			if(reloj'event and reloj='1')then
+			divi <=divi+1; --Reloj
+			div_b <= div_b+1; -- Buzzer
+			end if;
+		end process divisor;
+
+		clk<= divi(2); -- 	Divisor Tarjeta
+--		clk <= divi(1); -- Divisor Simulacion
+		clk_b <= div_b(1);
+--		clk_b <= div_b(0);
+
+----------------------
+-- Cambio de estado --
+----------------------		
+		p_reloj: process(clk)
+		begin
+			if(clk'event and clk='1') then
+				edo_pres <= edo_fut;
+				end if;
+		end process p_reloj;
+
+----------------------------
+-- Controlador del buzzer --
+----------------------------
+		p_buzzer: process(B)
+			begin
+				if(B = '1') then
+					buzzer <= clk_b;
+					else
+					buzzer <= '0';
+				end if;
+			end process p_buzzer;
+--P1, SP1, BP1, DP1, P2, SP2, BP2, DP2, P3, SP3, BP3, DP3
+		carta_asm: process(boton_PB, boton_P1, boton_P2, boton_P3, sensor_PB, sensor_P1, sensor_P2, sensor_P3)
+			begin
+				case edo_pres is
+					when PB => -- PLANTA BAJA
+						B <= '0';
+						if(boton_P1 = '1') then
+							edo_fut <= SP1;
+						elsif(boton_P2 = '1') then
+							edo_fut <= SP2;
+						elsif(boton_P3 = '1') then
+							edo_fut <= SP3;
+						else
+							edo_fut <= PB;
+						end if;
+						
+					when BPB => 
+						if(sensor_PB = '1') then
+							edo_fut <= DPB;
+						else
+							SUBIR <= '0';
+							BAJAR <= '1';
+							edo_fut <= BPB;
+						end if;
+						
+					when DPB =>	
+						SUBIR <= '0';
+						BAJAR <= '0';
+						B <= '1';
+						edo_fut <= PB;
+						
+					when P1 => -- PISO 1
+						B <= '0';
+						if(boton_PB = '1') then
+							edo_fut <= BPB;
+						elsif(boton_P2 = '1') then
+							edo_fut <= SP2;
+						elsif(boton_P3 = '1') then
+							edo_fut <= SP3;
+						else
+							edo_fut <= P1;
+						end if;
+						
+					when BP1 => 
+						if(sensor_P1 = '1') then
+							edo_fut <= DP1;
+						else
+							SUBIR <= '0';
+							BAJAR <= '1';
+							edo_fut <= BP1;
+						end if;
+						
+					when SP1 => 
+						if(sensor_P1 = '1') then
+							edo_fut <= DP1;
+						else
+							SUBIR <= '1';
+							BAJAR <= '0';
+							edo_fut <= SP1;
+						end if;
+						
+					when DP1 =>	
+						SUBIR <= '0';
+						BAJAR <= '0';
+						B <= '1';
+						edo_fut <= P1;
+					
+					when P2 => -- PISO 2
+						B <= '0';
+						if(boton_PB = '1') then
+							edo_fut <= BPB;
+						elsif(boton_P1 = '1') then
+							edo_fut <= BP1;
+						elsif(boton_P3 = '1') then
+							edo_fut <= SP3;
+						else
+							edo_fut <= P2;
+						end if;
+						
+					when BP2 => 
+						if(sensor_P2 = '1') then
+							edo_fut <= DP2;
+						else
+							SUBIR <= '0';
+							BAJAR <= '1';
+							edo_fut <= BP2;
+						end if;
+						
+					when SP2 => 
+						if(sensor_P2 = '1') then
+							edo_fut <= DP2;
+						else
+							SUBIR <= '1';
+							BAJAR <= '0';
+							edo_fut <= SP2;
+						end if;
+						
+					when DP2 =>	
+						SUBIR <= '0';
+						BAJAR <= '0';
+						B <= '1';
+						edo_fut <= P2;
+						
+					when P3 => -- PISO 3
+						B <= '0';
+						if(boton_PB = '1') then
+							edo_fut <= BPB;
+						elsif(boton_P1 = '1') then
+							edo_fut <= BP1;
+						elsif(boton_P2 = '1') then
+							edo_fut <= BP2;
+						else
+							edo_fut <= P3;
+						end if;
+
+						
+					when SP3 => 
+						if(sensor_P2 = '1') then
+							edo_fut <= DP3;
+						else
+							SUBIR <= '1';
+							BAJAR <= '0';
+							edo_fut <= SP3;
+						end if;
+						
+					when DP3 =>	
+						SUBIR <= '0';
+						BAJAR <= '0';
+						B <= '1';
+						edo_fut <= P3;
+			end process carta_asm;
+end comportamiento;

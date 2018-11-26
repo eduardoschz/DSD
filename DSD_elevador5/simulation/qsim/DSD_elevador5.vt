@@ -1,0 +1,430 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "11/16/2018 13:33:27"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    ES201917EL
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module ES201917EL_vlg_sample_tst(
+	boton_P1,
+	boton_P2,
+	boton_P3,
+	boton_PB,
+	reloj,
+	sensor_P1,
+	sensor_P2,
+	sensor_P3,
+	sensor_PB,
+	sampler_tx
+);
+input  boton_P1;
+input  boton_P2;
+input  boton_P3;
+input  boton_PB;
+input  reloj;
+input  sensor_P1;
+input  sensor_P2;
+input  sensor_P3;
+input  sensor_PB;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(boton_P1 or boton_P2 or boton_P3 or boton_PB or reloj or sensor_P1 or sensor_P2 or sensor_P3 or sensor_PB)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module ES201917EL_vlg_check_tst (
+	BAJAR,
+	buzzer,
+	Q,
+	SUBIR,
+	sampler_rx
+);
+input  BAJAR;
+input  buzzer;
+input [3:0] Q;
+input  SUBIR;
+input sampler_rx;
+
+reg  BAJAR_expected;
+reg  buzzer_expected;
+reg [3:0] Q_expected;
+reg  SUBIR_expected;
+
+reg  BAJAR_prev;
+reg  buzzer_prev;
+reg [3:0] Q_prev;
+reg  SUBIR_prev;
+
+reg  BAJAR_expected_prev;
+reg  buzzer_expected_prev;
+reg [3:0] Q_expected_prev;
+reg  SUBIR_expected_prev;
+
+reg  last_BAJAR_exp;
+reg  last_buzzer_exp;
+reg [3:0] last_Q_exp;
+reg  last_SUBIR_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:4] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 4'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	BAJAR_prev = BAJAR;
+	buzzer_prev = buzzer;
+	Q_prev = Q;
+	SUBIR_prev = SUBIR;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	BAJAR_expected_prev = BAJAR_expected;
+	buzzer_expected_prev = buzzer_expected;
+	Q_expected_prev = Q_expected;
+	SUBIR_expected_prev = SUBIR_expected;
+end
+
+
+
+// expected buzzer
+initial
+begin
+	buzzer_expected = 1'bX;
+end 
+
+// expected BAJAR
+initial
+begin
+	BAJAR_expected = 1'bX;
+end 
+
+// expected SUBIR
+initial
+begin
+	SUBIR_expected = 1'bX;
+end 
+// expected Q[ 3 ]
+initial
+begin
+	Q_expected[3] = 1'bX;
+end 
+// expected Q[ 2 ]
+initial
+begin
+	Q_expected[2] = 1'bX;
+end 
+// expected Q[ 1 ]
+initial
+begin
+	Q_expected[1] = 1'bX;
+end 
+// expected Q[ 0 ]
+initial
+begin
+	Q_expected[0] = 1'bX;
+end 
+// generate trigger
+always @(BAJAR_expected or BAJAR or buzzer_expected or buzzer or Q_expected or Q or SUBIR_expected or SUBIR)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected BAJAR = %b | expected buzzer = %b | expected Q = %b | expected SUBIR = %b | ",BAJAR_expected_prev,buzzer_expected_prev,Q_expected_prev,SUBIR_expected_prev);
+	$display("| real BAJAR = %b | real buzzer = %b | real Q = %b | real SUBIR = %b | ",BAJAR_prev,buzzer_prev,Q_prev,SUBIR_prev);
+`endif
+	if (
+		( BAJAR_expected_prev !== 1'bx ) && ( BAJAR_prev !== BAJAR_expected_prev )
+		&& ((BAJAR_expected_prev !== last_BAJAR_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port BAJAR :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", BAJAR_expected_prev);
+		$display ("     Real value = %b", BAJAR_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_BAJAR_exp = BAJAR_expected_prev;
+	end
+	if (
+		( buzzer_expected_prev !== 1'bx ) && ( buzzer_prev !== buzzer_expected_prev )
+		&& ((buzzer_expected_prev !== last_buzzer_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port buzzer :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", buzzer_expected_prev);
+		$display ("     Real value = %b", buzzer_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_buzzer_exp = buzzer_expected_prev;
+	end
+	if (
+		( Q_expected_prev[0] !== 1'bx ) && ( Q_prev[0] !== Q_expected_prev[0] )
+		&& ((Q_expected_prev[0] !== last_Q_exp[0]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_expected_prev);
+		$display ("     Real value = %b", Q_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_Q_exp[0] = Q_expected_prev[0];
+	end
+	if (
+		( Q_expected_prev[1] !== 1'bx ) && ( Q_prev[1] !== Q_expected_prev[1] )
+		&& ((Q_expected_prev[1] !== last_Q_exp[1]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_expected_prev);
+		$display ("     Real value = %b", Q_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_Q_exp[1] = Q_expected_prev[1];
+	end
+	if (
+		( Q_expected_prev[2] !== 1'bx ) && ( Q_prev[2] !== Q_expected_prev[2] )
+		&& ((Q_expected_prev[2] !== last_Q_exp[2]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_expected_prev);
+		$display ("     Real value = %b", Q_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_Q_exp[2] = Q_expected_prev[2];
+	end
+	if (
+		( Q_expected_prev[3] !== 1'bx ) && ( Q_prev[3] !== Q_expected_prev[3] )
+		&& ((Q_expected_prev[3] !== last_Q_exp[3]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Q[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Q_expected_prev);
+		$display ("     Real value = %b", Q_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_Q_exp[3] = Q_expected_prev[3];
+	end
+	if (
+		( SUBIR_expected_prev !== 1'bx ) && ( SUBIR_prev !== SUBIR_expected_prev )
+		&& ((SUBIR_expected_prev !== last_SUBIR_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port SUBIR :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", SUBIR_expected_prev);
+		$display ("     Real value = %b", SUBIR_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_SUBIR_exp = SUBIR_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module ES201917EL_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg boton_P1;
+reg boton_P2;
+reg boton_P3;
+reg boton_PB;
+reg reloj;
+reg sensor_P1;
+reg sensor_P2;
+reg sensor_P3;
+reg sensor_PB;
+// wires                                               
+wire BAJAR;
+wire buzzer;
+wire [3:0] Q;
+wire SUBIR;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+ES201917EL i1 (
+// port map - connection between master ports and signals/registers   
+	.BAJAR(BAJAR),
+	.boton_P1(boton_P1),
+	.boton_P2(boton_P2),
+	.boton_P3(boton_P3),
+	.boton_PB(boton_PB),
+	.buzzer(buzzer),
+	.Q(Q),
+	.reloj(reloj),
+	.sensor_P1(sensor_P1),
+	.sensor_P2(sensor_P2),
+	.sensor_P3(sensor_P3),
+	.sensor_PB(sensor_PB),
+	.SUBIR(SUBIR)
+);
+
+// reloj
+always
+begin
+	reloj = 1'b0;
+	reloj = #2500 1'b1;
+	#2500;
+end 
+
+// boton_PB
+initial
+begin
+	boton_PB = 1'b0;
+	boton_PB = #640000 1'b1;
+	boton_PB = #60000 1'b0;
+end 
+
+// boton_P1
+initial
+begin
+	boton_P1 = 1'b0;
+end 
+
+// boton_P2
+initial
+begin
+	boton_P2 = 1'b0;
+	boton_P2 = #400000 1'b1;
+	boton_P2 = #50000 1'b0;
+end 
+
+// boton_P3
+initial
+begin
+	boton_P3 = 1'b0;
+	boton_P3 = #60000 1'b1;
+	boton_P3 = #70000 1'b0;
+end 
+
+// sensor_PB
+initial
+begin
+	sensor_PB = 1'b0;
+	sensor_PB = #850000 1'b1;
+end 
+
+// sensor_P1
+initial
+begin
+	sensor_P1 = 1'b0;
+	sensor_P1 = #30000 1'b1;
+	sensor_P1 = #50000 1'b0;
+end 
+
+// sensor_P2
+initial
+begin
+	sensor_P2 = 1'b0;
+	sensor_P2 = #600000 1'b1;
+	sensor_P2 = #60000 1'b0;
+end 
+
+// sensor_P3
+initial
+begin
+	sensor_P3 = 1'b0;
+	sensor_P3 = #320000 1'b1;
+	sensor_P3 = #100000 1'b0;
+end 
+
+ES201917EL_vlg_sample_tst tb_sample (
+	.boton_P1(boton_P1),
+	.boton_P2(boton_P2),
+	.boton_P3(boton_P3),
+	.boton_PB(boton_PB),
+	.reloj(reloj),
+	.sensor_P1(sensor_P1),
+	.sensor_P2(sensor_P2),
+	.sensor_P3(sensor_P3),
+	.sensor_PB(sensor_PB),
+	.sampler_tx(sampler)
+);
+
+ES201917EL_vlg_check_tst tb_out(
+	.BAJAR(BAJAR),
+	.buzzer(buzzer),
+	.Q(Q),
+	.SUBIR(SUBIR),
+	.sampler_rx(sampler)
+);
+endmodule
+
